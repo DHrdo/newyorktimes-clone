@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-
-
+  
+if (process.env.NODE_ENV !== 'production') {
+    require('dotenv').config();
+  };
 
 export const MainPage = (props) => {
-    // Dichiarazione degli stati per immagazzinare le notizie principali e le altre notizie
+
+
     const [news, setNews] = useState([]);
     const [otherNews, setOtherNews] = useState([]);
     const [randomNews, setRandomNews] = useState([]);
@@ -35,9 +38,7 @@ export const MainPage = (props) => {
     };
 
 
-
-
-    const API_KEY = process.env.KEY;
+    const API_KEY = process.env.REACT_APP_API_KEY;
     
     // Funzione per effettuare la chiamata API per le altre notizie
     const getRandomCountries = () => {

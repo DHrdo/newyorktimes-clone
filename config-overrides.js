@@ -1,19 +1,14 @@
-const Dotenv = require('dotenv-webpack');
+const path = require('path');
 
 module.exports = function override(config, env) {
-  // Altri elementi della configurazione di Webpack...
-
-  // Aggiungi un fallback per 'crypto' utilizzando crypto-browserify
-  config.resolve.fallback = {
-    ...config.resolve.fallback,
-    "crypto": require.resolve("crypto-browserify"),
-    "stream": require.resolve("stream-browserify")
+  // Aggiungi il fallback per risolvere il modulo 'crypto'
+  config.resolve = {
+    ...config.resolve,
+    fallback: {
+      ...config.resolve.fallback,
+      "crypto": false
+    }
   };
-
-  // Aggiungi il plugin Dotenv per caricare le variabili d'ambiente
-  config.plugins.push(
-    new Dotenv()
-  );
 
   return config;
 };
