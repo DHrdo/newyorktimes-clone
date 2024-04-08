@@ -1,6 +1,6 @@
 import React from "react";
 
-export const Subscribe = (props) => {
+export const Subscribe = () => {
 
     return (
         <div className="subscribe-container">

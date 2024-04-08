@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-  
+
 if (process.env.NODE_ENV !== 'production') {
     require('dotenv').config();
-  };
+};
 
 export const MainPage = (props) => {
 
@@ -39,7 +39,7 @@ export const MainPage = (props) => {
 
 
     const API_KEY = process.env.REACT_APP_API_KEY;
-    
+
     // Funzione per effettuare la chiamata API per le altre notizie
     const getRandomCountries = () => {
         const countries = [
@@ -240,13 +240,13 @@ export const MainPage = (props) => {
             "Zambia",
             "Zimbabwe"
         ];
-    
+
         // Genera un paese casuale
         const randomIndex = Math.floor(Math.random() * countries.length);
         const randomCity = countries[randomIndex];
         return randomCity;
     };
-    
+
     const getNewsDeskItem = () => {
         const newsDeskValues = [
             "Adventure Sports",
@@ -360,12 +360,12 @@ export const MainPage = (props) => {
             "World",
             "Your Money"
         ];
-    
+
         return newsDeskValues[Math.floor(Math.random() * newsDeskValues.length)];
     }
-    
-    
-    
+
+
+
     function APICall(url, saveToState) {
         axios.get(url)
             .then(response => {
@@ -376,16 +376,16 @@ export const MainPage = (props) => {
                 console.error('Request Error', error);
             })
     }
-    
-    
-    
-    
+
+
+
+
     useEffect(() => {
         APICall(`https://api.nytimes.com/svc/topstories/v2/home.json?api-key=${API_KEY}`, setNews);
         APICall(`https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${getRandomCountries()}&api-key=${API_KEY}`, setOtherNews);
         APICall(`https://api.nytimes.com/svc/search/v2/articlesearch.json?fq=news_desk:(${getNewsDeskItem()})&api-key=${API_KEY}`, setRandomNews);
     }, []);
-    
+
 
 
 
@@ -393,12 +393,16 @@ export const MainPage = (props) => {
     // Mappa le notizie principali
     const newsSection = news.map((newsElement, index) => {
         // Estrae i dati delle notizie
-        let { url = '', caption = '', byline = '', copyright = '', title = '', abstract = '' } = newsElement
+        let { url = '', caption = '', byline = '', copyright = '', title = '', abstract = '', newsURL = '' } = newsElement
 
-        // Se ci sono immagini, estrae l'URL e la didascalia della prima immagine
         if (newsElement.multimedia && newsElement.multimedia.length > 0) {
             ({ url, caption, byline, copyright } = newsElement.multimedia[0])
         };
+
+        if (newsElement.newsURL) {
+            ({ newsURL } = newsElement)
+        }
+
 
         return (
             <section className="wrap-news-informations" key={index}>
@@ -413,10 +417,12 @@ export const MainPage = (props) => {
                 <p className="more-updates">See more updates</p>
                 {/* Immagine, didascalia e attributi della notizia */}
                 <div className="wrap-image-details">
-                    <img className="news-image" src={url} />
-                    <p className="news-image-description">{props.screenSize < 768 && caption.length > 100 ? '' : caption}</p>
-                    <p className="news-image-byline">{byline}</p>
-                    <p className="news-image-copyright">{copyright}</p>
+                    <a href={newsURL}>
+                        <img className="news-image" src={url} />
+                        <p className="news-image-description">{props.screenSize < 768 && caption.length > 100 ? '' : caption}</p>
+                        <p className="news-image-byline">{byline}</p>
+                        <p className="news-image-copyright">{copyright}</p>
+                    </a>
                 </div>
             </section>
         )

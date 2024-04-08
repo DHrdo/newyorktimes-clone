@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Search } from "./Search";
 
 export const Menu = () => {
 
