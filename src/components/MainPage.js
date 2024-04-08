@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
+
+
 export const MainPage = (props) => {
     // Dichiarazione degli stati per immagazzinare le notizie principali e le altre notizie
     const [news, setNews] = useState([]);
