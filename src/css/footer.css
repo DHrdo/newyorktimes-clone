@@ -1,0 +1,83 @@
+.bolder {
+  font-weight: bolder;
+}
+
+.footer {
+  max-width: 1024px;
+  margin: 50px auto;
+  border-top: 3px double rgba(170, 170, 170, 0.452);
+  width: 100%;
+  padding: 10px;
+}
+.footer .footer-title {
+  font-weight: bold;
+  font-size: 1.6em;
+  margin-bottom: 10px;
+  font-family: "Caveat";
+}
+.footer .wrap-footer-mobile {
+  display: flex;
+  justify-content: space-between;
+  align-items: top;
+}
+.footer .wrap-footer-mobile .footer-list {
+  list-style-type: none;
+  padding: 0;
+  width: 100%;
+}
+.footer .wrap-footer-mobile .footer-list .footer-list-title {
+  font-weight: bolder;
+  font-size: 0.9em;
+  margin-bottom: 10px;
+}
+.footer .wrap-footer-mobile .footer-list li {
+  margin: 5px 0;
+  border-bottom: 1px solid rgba(170, 170, 170, 0.452);
+  padding: 10px 0;
+}
+.footer .wrap-footer-mobile .footer-list li a {
+  text-decoration: none;
+  color: black;
+  font-weight: bolder;
+}
+
+@media screen and (min-width: 1024px) {
+  .footer {
+    max-width: 1024px;
+    margin: 50px auto;
+    border-top: 3px double rgba(170, 170, 170, 0.452);
+    width: 100%;
+    padding: 10px 0;
+  }
+  .footer .footer-title {
+    font-weight: bold;
+    font-size: 1.6em;
+    margin-bottom: 10px;
+    font-family: "Caveat";
+  }
+  .footer .wrap-footer-desktop {
+    display: flex;
+    justify-content: space-between;
+    align-items: top;
+  }
+  .footer .wrap-footer-desktop .footer-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  .footer .wrap-footer-desktop .footer-list .footer-list-title {
+    font-weight: bolder;
+    font-size: 0.9em;
+    margin-bottom: 10px;
+  }
+  .footer .wrap-footer-desktop .footer-list li {
+    margin: 5px 0;
+  }
+  .footer .wrap-footer-desktop .footer-list li a {
+    text-decoration: none;
+    color: black;
+  }
+  .footer .wrap-footer-desktop .footer-list:last-child {
+    border-left: 1px solid rgba(170, 170, 170, 0.452);
+    padding-left: 10px;
+  }
+}/*# sourceMappingURL=footer.css.map */

@@ -1,0 +1,19 @@
+.languages-container .languages-list {
+  margin-left: -15px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.languages-container .languages-list li {
+  align-items: center;
+  font-size: 0.6em;
+}
+.languages-container .languages-list li a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: black;
+}/*# sourceMappingURL=languages.css.map */

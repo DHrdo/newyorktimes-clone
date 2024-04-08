@@ -1,0 +1,244 @@
+@font-face {
+    font-family: 'Caveat';
+    src: url(../fonts/Caveat.ttf);
+}
+.header-mobile {
+    max-width: 1280px;
+    margin: 0 auto;
+
+    .wrap-header {
+        border-bottom: 1px solid black;
+
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 15px 20px;
+        align-items: center;
+
+        .hamburger-menu-icon-container {
+            max-width: 15px;
+
+            .hamburger-menu-closed {
+                width: 100%;
+                position: relative;
+                z-index: 999;
+            }
+
+            .hamburger-menu-opened {
+                width: 100%;
+            }
+        }
+
+        .nyt-title {
+            font-family: 'Caveat';
+            font-size: 1.1em;
+        }
+
+        .user-icon-container {
+            max-width: 15px;
+
+            .user-icon {
+                max-width: 100%;
+            }
+        }
+    }
+
+    .menu-content {
+        position: absolute;
+        width: 100%;
+        margin: 0 auto;
+
+        .wrap-search {
+            margin: 0 auto;
+            width: 95%;
+            display: flex;
+            justify-content: center;
+            padding: 20px 0;
+            gap: 10px;
+
+            .search-input {
+                padding: 5px;
+                width: 100%;
+            }
+
+            .search-submit {
+                font-size: 0.7em;
+                width: 40px;
+                height: 40px;
+                color: white;
+                background-color: rgb(173, 173, 173);
+                border-radius: 5px;
+                border-style: solid;
+                border-color: unset;
+
+            }
+
+        }
+
+        .wrap-sections {
+            font-size: 1.1em;
+            font-weight: bolder;
+            margin: 0 auto;
+            width: 95%;
+
+            .section {
+                padding: 20px 0;
+                border-bottom: 1px solid grey;
+
+                .subcategories {
+                    list-style-type: none;
+                    width: 100%;
+
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+
+
+                    .section-subtitle-title {
+                        color: gray;
+                        margin-top: 20px;
+                    }
+
+                    .wrap-section-subtitle-newsletters {
+
+                        grid-column: 1 / -1;
+
+                        .wrap-newsletter-content {
+
+                            display: grid;
+                            grid-template-columns: 70px 1fr;
+                            grid-template-rows: 30px 60px;
+
+                            .newsletter-img {
+                                grid-row: 1 / -1;
+                                max-width: 60px;
+                            }
+
+                            .newsletter-title {
+                                font-size: 1em;
+                                text-align: left;
+                            }
+
+                            .newsletter-description {
+                                font-size: 0.9em;
+                                text-align: left;
+                                font-weight: 300;
+                            }
+                        }
+                    }
+
+                    .subtitle {
+                        font-weight: bold;
+                        margin: 3px;
+
+                        a {
+                            text-decoration: none;
+                            color: black;
+                        }
+                    }
+
+                    .section-subtitle-title {
+                        grid-column: 1 / -1;
+                    }
+                }
+            }
+
+            .section-divider {
+                width: 100%;
+                border-bottom: 2px solid black;
+                text-align: center;
+            }
+        }
+    }
+
+}
+
+
+@media screen and (min-width: 1024px) {
+    .header-desktop {
+        max-width: 1280px;
+        margin: 0 auto;
+
+        .wrap-sections {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            padding: 30px;
+
+            .section {
+                margin: 0 2px;
+                
+                .section-title {
+                    cursor: pointer;
+                    font-weight: 100;
+                    font-size: small;
+
+                    .arrow {
+                        margin-top: 4px;
+                    }
+                }
+
+                .section-divider {
+                    display: none;
+                }
+
+                .subcategories {
+
+                    list-style-type: none;
+
+                    position: absolute;
+                    width: 99.99%;
+                    height: 400px;
+                    left: 0;
+
+                    background-color: white;
+                    z-index: 999;
+
+                    display: flex;
+                    justify-content: space-between;
+                    padding: 40px 50px;
+
+                    .wrap-subtitle-content {
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        grid-template-rows: repeat(8, 35px);
+
+                        .section-subtitle-title {
+
+                            font-weight: 100;
+                            grid-column: 1 / -1;
+                        }
+                        .subtitle {
+                            color: rgb(51, 51, 51);
+                        }
+                    }
+
+                    .wrap-section-subtitle-newsletters {
+                        .section-subtitle-title {
+                            font-weight: 100;
+                        }
+
+                        .wrap-newsletter-content {
+                            .newsletter-title {
+                                font-weight: 100;
+                                font-size: 1em;
+                            }
+                            .newsletter-img {
+                                margin-top: 10px;
+                                width: 36px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.displayNone {
+    display: none;
+}
+
+.arrow {
+    float: right;
+    margin-right: 20px;
+}

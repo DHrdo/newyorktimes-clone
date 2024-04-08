@@ -1,0 +1,44 @@
+.date-Container {
+  outline: 1px solid rgb(228, 228, 228);
+  background-color: rgba(241, 241, 241, 0.712);
+  height: 35px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.date-Container .wrap-date {
+  width: fit-content;
+  margin-left: 20px;
+}
+.date-Container .wrap-date .dateTime {
+  font-size: 0.7em;
+  font-weight: bolder;
+}
+
+@media screen and (min-width: 1024px) {
+  .date-Container {
+    outline: 1px solid rgba(228, 228, 228, 0.37);
+    background-color: rgba(247, 247, 247, 0.479);
+    height: 35px;
+    display: flex;
+    align-items: center;
+  }
+  .date-Container .wrap-date {
+    max-width: auto;
+  }
+  .date-Container .wrap-date .dateTime {
+    text-align: left;
+    font-size: 0.75em;
+    font-weight: bolder;
+  }
+  .date-Container .wrap-date .todays-paper {
+    font-size: 0.75em;
+    margin-left: 20px;
+  }
+  .date-Container .nyt-title {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-60%);
+    font-size: 2em;
+  }
+}/*# sourceMappingURL=dateComponent.css.map */

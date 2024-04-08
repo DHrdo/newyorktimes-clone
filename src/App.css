@@ -1,0 +1,17 @@
+@import url(./css/header.css);
+@import url(./css/dateComponent.css);
+@import url(./css/subscribe.css);
+@import url(./css/languages.css);
+@import url(./css/user.css);
+@import url(./css/menu.css);
+@import url(./css/mainPage.css);
+@import url(./css/footer.css);
+
+
+@media screen and (min-width: 1280px) {
+    .App {
+        width: 1280px;
+        margin: 0 auto;
+        padding: 0 30px;
+    }
+}

@@ -1,0 +1,41 @@
+.subscribe-container {
+
+    p {
+        a {
+            font-size: 0.7em;
+            margin-right: 20px;
+            border-radius: 3px;
+            width: fit-content;
+            color: rgb(21, 152, 196);
+            text-align: center;
+
+            cursor: pointer;
+            text-decoration: none;
+
+        }
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .subscribe-container {
+        display: flex;
+        align-items: center;
+
+        p {
+            a {
+                font-size: 0.75em;
+                border-radius: 3px;
+                width: fit-content;
+                color: white;
+                background-color: rgb(0, 122, 192);
+                text-align: center;
+                padding: 9px;
+                margin: 1px 0;
+
+                cursor: pointer;
+                text-decoration: none;
+
+            }
+        }
+    }
+}
