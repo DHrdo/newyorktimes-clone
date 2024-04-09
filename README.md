@@ -28,7 +28,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/DHrdo/newyorktimes-clone">
-    <img src="./src/images/logo-readme.png" alt="Logo" width="80" height="80">
+    <img src="./public/images/logo-readme.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">NEW YORK TIMES CLONE FOR START2IMPACT</h3>
