@@ -79,8 +79,6 @@ This project required to create a newyorktimes clone in React.js
 
 ### Built With
 
-This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
-
 * [![HTML][html.com]][Html-url]
 * [![CSS][css.com]][css-url]
 * [![Javascript][Javascript.com]][Javascript-url]
@@ -91,7 +89,7 @@ This section should list any major frameworks/libraries used to bootstrap your p
 
 <!-- USAGE EXAMPLES -->
 ## Usage
-You can search any book genre you want to test the application.
+You can see the home page news of the real newyorktimes website
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
