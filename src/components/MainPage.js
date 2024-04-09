@@ -32,15 +32,11 @@ export const MainPage = (props) => {
                 )) : [],
             }
         ));
-
-        // Imposta lo stato con i dati delle notizie
         setArray(newsObj)
     };
 
 
-    const API_KEY = process.env.REACT_APP_API_KEY;
 
-    // Funzione per effettuare la chiamata API per le altre notizie
     const getRandomCountries = () => {
         const countries = [
             "Afghanistan",
@@ -378,7 +374,7 @@ export const MainPage = (props) => {
     }
 
 
-
+    const API_KEY = process.env.REACT_APP_API_KEY;
 
     useEffect(() => {
         APICall(`https://api.nytimes.com/svc/topstories/v2/home.json?api-key=${API_KEY}`, setNews);
