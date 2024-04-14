@@ -41,8 +41,14 @@ const App = () => {
             isMenuOpened={isMenuOpened}
           />
       }
-      <MainPage screenSize={windowWidth} isMenuOpened={isMenuOpened} />
-      <Footer screenSize={windowWidth} isMenuOpened={isMenuOpened} />
+      <MainPage
+        screenSize={windowWidth}
+        isMenuOpened={isMenuOpened}
+      />
+      <Footer
+        screenSize={windowWidth}
+        isMenuOpened={isMenuOpened}
+      />
     </div>
   )
 };
