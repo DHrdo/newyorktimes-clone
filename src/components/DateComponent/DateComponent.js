@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Subscribe } from '../components/Subscribe'
+import { Subscribe } from '../Subscribe/Subscribe'
 
 export const DateComponent = (props) => {
 

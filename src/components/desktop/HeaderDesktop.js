@@ -1,10 +1,10 @@
 import React from "react";
-import { Search } from "../Search";
-import { Languages } from "../Languages";
-import { Subscribe } from "../Subscribe";
+import { Search } from "../Search/Search";
+import { Languages } from "../Languages/Languages";
+import { Subscribe } from "../Subscribe/Subscribe";
 import { UserDesktop } from "../desktop/UserDesktop"
-import { Menu } from "../Menu";
-import { DateComponent } from "../DateComponent";
+import { Menu } from "../Menu/Menu";
+import { DateComponent } from "../DateComponent/DateComponent";
 
 export const HeaderDesktop = (props) => {
     return (

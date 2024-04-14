@@ -3,8 +3,8 @@ import './App.css';
 import { Helmet } from 'react-helmet';
 import { HeaderMobile } from './components/mobile/HeaderMobile.js';
 import { HeaderDesktop } from './components/desktop/HeaderDesktop.js';
-import { MainPage } from './components/MainPage.js';
-import { Footer } from './components/Footer.js';
+import { MainPage } from './components/MainPage/MainPage.js';
+import { Footer } from './components/Footer/Footer.js';
 
 const App = () => {
 

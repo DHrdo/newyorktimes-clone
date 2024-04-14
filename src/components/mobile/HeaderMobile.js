@@ -1,8 +1,8 @@
 import React from "react"
-import { Search } from "../Search"
-import { Menu } from "../Menu"
+import { Search } from "../Search/Search"
+import { Menu } from "../Menu/Menu"
 import { UserMobile } from "../mobile/UserMobile"
-import { DateComponent } from "../DateComponent"
+import { DateComponent } from "../DateComponent/DateComponent"
 
 export const HeaderMobile = (props) => {
 
