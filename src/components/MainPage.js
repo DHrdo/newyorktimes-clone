@@ -1,16 +1,19 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { Loading } from './Loading';
 
+/*
 if (process.env.NODE_ENV !== 'production') {
     require('dotenv').config();
 };
-
+*/
 export const MainPage = (props) => {
 
 
     const [news, setNews] = useState([]);
     const [otherNews, setOtherNews] = useState([]);
     const [randomNews, setRandomNews] = useState([]);
+    const [loading, setLoading] = useState(true)
 
     function saveNewsData(responseData, setArray) {
         const newsObj = responseData.map(item => (
@@ -367,14 +370,17 @@ export const MainPage = (props) => {
             .then(response => {
                 const responseData = response.data.results || response.data.response.docs
                 saveNewsData(responseData, saveToState);
+                setLoading(false);
             })
             .catch(error => {
                 console.error('Request Error', error);
+                setLoading(false);
             })
     }
 
 
-    const API_KEY = process.env.REACT_APP_API_KEY;
+    const API_KEY = 'cIi5dphyFv4WN0ZEh6bYsH6xqpMTVPDb'
+    //process.env.REACT_APP_API_KEY;
 
     useEffect(() => {
         APICall(`https://api.nytimes.com/svc/topstories/v2/home.json?api-key=${API_KEY}`, setNews);
@@ -463,20 +469,24 @@ export const MainPage = (props) => {
     });
 
     return (
+
         <main className={!props.isMenuOpened ? "main-page" : "displayNone"}>
-            <div className="wrap-grid">
-                <div className="main-news-sections">
-                    {newsSection}
-                </div>
-                <div className="other-news-sections">
-                    <h2 className="other-news-title">Other News:</h2>
-                    {otherNewsSection}
-                </div>
-                <div className="side-news-sections">
-                    <h2 className="side-news-title">You can be interested in:</h2>
-                    {randomNewsSection}
-                </div>
-            </div>
+            {
+                loading ? <Loading /> :
+                    <div className="wrap-grid">
+                        <div className="main-news-sections">
+                            {newsSection}
+                        </div>
+                        <div className="other-news-sections">
+                            <h2 className="other-news-title">Other News:</h2>
+                            {otherNewsSection}
+                        </div>
+                        <div className="side-news-sections">
+                            <h2 className="side-news-title">You can be interested in:</h2>
+                            {randomNewsSection}
+                        </div>
+                    </div>
+            }
         </main>
     )
 }

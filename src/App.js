@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import './App.css';
+import { Helmet } from 'react-helmet';
 import { HeaderMobile } from './components/mobile/HeaderMobile.js';
 import { HeaderDesktop } from './components/desktop/HeaderDesktop.js';
 import { MainPage } from './components/MainPage.js';
@@ -9,7 +10,6 @@ const App = () => {
 
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [isMenuOpened, setIsMenuOpened] = useState(false)
-  const [loader, setLoader] = useState(true);
 
   function handleToggleMenu() {
     setIsMenuOpened(prevMenuState => !prevMenuState);
@@ -27,16 +27,17 @@ const App = () => {
 
   return (
     <div className='App'>
+      <div>
+        <Helmet>
+          <title>New York Times Clone</title>
+
+        </Helmet>
+      </div>
+
       {
-        loader ?
-          <div className="loader-container">
-            <div className="loader">
-              <h1>Loading...</h1>
-            </div>
-          </div> :
-          windowWidth > 1024 ?
-            <HeaderDesktop screenSize={windowWidth} /> :
-            <HeaderMobile screenSize={windowWidth} handleToggleMenu={handleToggleMenu} isMenuOpened={isMenuOpened} />
+        windowWidth > 1024 ?
+          <HeaderDesktop screenSize={windowWidth} /> :
+          <HeaderMobile screenSize={windowWidth} handleToggleMenu={handleToggleMenu} isMenuOpened={isMenuOpened} />
       }
       <MainPage screenSize={windowWidth} isMenuOpened={isMenuOpened} />
       <Footer screenSize={windowWidth} isMenuOpened={isMenuOpened} />
