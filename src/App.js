@@ -33,7 +33,8 @@ const App = () => {
 
       {
         windowWidth > 1024 ?
-          <HeaderDesktop screenSize={windowWidth} /> :
+          <HeaderDesktop screenSize={windowWidth} />
+          :
           <HeaderMobile
             screenSize={windowWidth}
             handleToggleMenu={handleToggleMenu}
