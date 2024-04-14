@@ -27,17 +27,18 @@ const App = () => {
 
   return (
     <div className='App'>
-      <div>
-        <Helmet>
-          <title>New York Times Clone</title>
-
-        </Helmet>
-      </div>
+      <Helmet>
+        <title>New York Times Clone</title>
+      </Helmet>
 
       {
         windowWidth > 1024 ?
           <HeaderDesktop screenSize={windowWidth} /> :
-          <HeaderMobile screenSize={windowWidth} handleToggleMenu={handleToggleMenu} isMenuOpened={isMenuOpened} />
+          <HeaderMobile
+            screenSize={windowWidth}
+            handleToggleMenu={handleToggleMenu}
+            isMenuOpened={isMenuOpened}
+          />
       }
       <MainPage screenSize={windowWidth} isMenuOpened={isMenuOpened} />
       <Footer screenSize={windowWidth} isMenuOpened={isMenuOpened} />
