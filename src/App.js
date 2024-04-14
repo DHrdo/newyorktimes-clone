@@ -9,6 +9,7 @@ const App = () => {
 
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [isMenuOpened, setIsMenuOpened] = useState(false)
+  const [loader, setLoader] = useState(true);
 
   function handleToggleMenu() {
     setIsMenuOpened(prevMenuState => !prevMenuState);
@@ -27,14 +28,15 @@ const App = () => {
   return (
     <div className='App'>
       {
-        windowWidth > 1024 ?
-          <HeaderDesktop screenSize={windowWidth} /> :
-
-          <HeaderMobile
-            screenSize={windowWidth}
-            handleToggleMenu={handleToggleMenu}
-            isMenuOpened={isMenuOpened}
-          />
+        loader ?
+          <div className="loader-container">
+            <div className="loader">
+              <h1>Loading...</h1>
+            </div>
+          </div> :
+          windowWidth > 1024 ?
+            <HeaderDesktop screenSize={windowWidth} /> :
+            <HeaderMobile screenSize={windowWidth} handleToggleMenu={handleToggleMenu} isMenuOpened={isMenuOpened} />
       }
       <MainPage screenSize={windowWidth} isMenuOpened={isMenuOpened} />
       <Footer screenSize={windowWidth} isMenuOpened={isMenuOpened} />
