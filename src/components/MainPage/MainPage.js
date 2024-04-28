@@ -7,6 +7,30 @@ if (process.env.NODE_ENV !== 'production') {
     require('dotenv').config();
 };
 */
+
+export function saveNewsData(responseData, setArray) {
+    const newsObj = responseData.map(item => (
+        {
+            newsID: item.uri,
+            newsURL: item.url || item.web_url,
+            title: item.title,
+            abstract: item.abstract,
+            byline: item.byline,
+            headline: item.headline ? item.headline.main : [],
+
+            multimedia: item.multimedia ? item.multimedia.slice(0, 3).map(media =>
+            (
+                {
+                    caption: media.caption,
+                    copyright: media.copyright,
+                    url: media.url,
+                }
+            )) : [],
+        }
+    ));
+    setArray(newsObj)
+};
+
 export const MainPage = (props) => {
 
 
@@ -14,30 +38,6 @@ export const MainPage = (props) => {
     const [otherNews, setOtherNews] = useState([]);
     const [randomNews, setRandomNews] = useState([]);
     const [loading, setLoading] = useState(true)
-
-    function saveNewsData(responseData, setArray) {
-        const newsObj = responseData.map(item => (
-            {
-                newsID: item.uri,
-                newsURL: item.url || item.web_url,
-                title: item.title,
-                abstract: item.abstract,
-                byline: item.byline,
-                headline: item.headline ? item.headline.main : [],
-
-                multimedia: item.multimedia ? item.multimedia.slice(0, 3).map(media =>
-                (
-                    {
-                        caption: media.caption,
-                        copyright: media.copyright,
-                        url: media.url,
-                    }
-                )) : [],
-            }
-        ));
-        setArray(newsObj)
-    };
-
 
 
     const getRandomCountries = () => {
@@ -376,7 +376,7 @@ export const MainPage = (props) => {
                 console.error('Request Error', error);
                 setLoading(false);
             })
-    }
+    };
 
 
     const API_KEY = 'cIi5dphyFv4WN0ZEh6bYsH6xqpMTVPDb'
@@ -384,12 +384,9 @@ export const MainPage = (props) => {
 
     useEffect(() => {
         APICall(`https://api.nytimes.com/svc/topstories/v2/home.json?api-key=${API_KEY}`, setNews);
-        APICall(`https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${getRandomCountries()}&api-key=${API_KEY}`, setOtherNews);
-        APICall(`https://api.nytimes.com/svc/search/v2/articlesearch.json?fq=news_desk:(${getNewsDeskItem()})&api-key=${API_KEY}`, setRandomNews);
+        //APICall(`https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${getRandomCountries()}&api-key=${API_KEY}`, setOtherNews);
+        //APICall(`https://api.nytimes.com/svc/search/v2/articlesearch.json?fq=news_desk:(${getNewsDeskItem()})&api-key=${API_KEY}`, setRandomNews);
     }, []);
-
-
-
 
 
     // Mappa le notizie principali
@@ -420,7 +417,7 @@ export const MainPage = (props) => {
                 {/* Immagine, didascalia e attributi della notizia */}
                 <div className="wrap-image-details">
                     <a href={newsURL}>
-                        <img className="news-image" src={url} />
+                        <img className="news-image" src={url} alt="URL"/>
                         <p className="news-image-description">{props.screenSize < 768 && caption.length > 100 ? '' : caption}</p>
                         <p className="news-image-byline">{byline}</p>
                         <p className="news-image-copyright">{copyright}</p>

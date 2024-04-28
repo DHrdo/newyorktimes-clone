@@ -4,7 +4,7 @@ import { Menu } from "../Menu/Menu"
 import { UserMobile } from "../mobile/UserMobile"
 import { DateComponent } from "../DateComponent/DateComponent"
 
-export const HeaderMobile = (props) => {
+export const HeaderMobile = ({ screenSize, isMenuOpened, handleSearchClick, handleToggleMenu, handleGetSearchInputText, handleGetLinkText, subName, searchState }) => {
 
 
     return (
@@ -12,35 +12,43 @@ export const HeaderMobile = (props) => {
             <div className="wrap-header">
                 <div className="hamburger-menu-icon-container">
                     {
-                        !props.isMenuOpened ?
+                        !isMenuOpened ?
                             <img
                                 className="hamburger-menu-closed"
                                 src={process.env.PUBLIC_URL + "/images/headerMenu/hamburger-closed-menu.png"}
                                 alt="Menu"
-                                onClick={props.handleToggleMenu}
+                                onClick={handleToggleMenu}
                             /> :
 
                             <img
                                 className="hamburger-menu-opened"
                                 src={process.env.PUBLIC_URL + "/images/headerMenu/cross-menu-opened.png"}
                                 alt="Menu"
-                                onClick={props.handleToggleMenu}
+                                onClick={handleToggleMenu}
                             />
                     }
                 </div>
 
-                <h1 className={!props.isMenuOpened ? "nyt-title" : "displayNone"}>THE NEW YORK TIMES</h1>
+                <h1 className={!isMenuOpened ? "nyt-title" : "displayNone"}>THE NEW YORK TIMES</h1>
 
 
-                <UserMobile isMenuOpened={props.isMenuOpened} />
+                <UserMobile isMenuOpened={isMenuOpened} />
 
             </div>
 
-            <div className={props.isMenuOpened ? "menu-content" : "displayNone"}>
-                <Search />
+            <div className={isMenuOpened ? "menu-content" : "displayNone"}>
+                <Search
+                    screenSize={screenSize}
+                    handleSearchClick={handleSearchClick}
+                    handleGetSearchInputText={handleGetSearchInputText}
+                    handleGetLinkText={handleGetLinkText}
+                    subName={subName}
+                    searchState={searchState}
+                />
+
                 <Menu />
             </div>
-            <DateComponent screenSize={props.screenSize} isMenuOpened={props.isMenuOpened} />
+            <DateComponent screenSize={screenSize} isMenuOpened={isMenuOpened} />
         </header>
     )
 }

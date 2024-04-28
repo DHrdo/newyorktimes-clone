@@ -1,0 +1,25 @@
+.subcategory-main {
+    .subcategory-title {
+        width: 100%;
+        background-color: rgba(211, 211, 211, 0.411);
+        text-align: center;
+        margin-top: 15px;
+        padding: 5px 0;
+    }
+
+    .wrap-subcategory-news {
+        border-bottom: 1px solid grey;
+        padding: 10px;
+
+        .subcategory-headline {
+            margin-top: 10px;
+            font-size: 1.2em;
+        }
+
+        .subcategory-abstract {
+            margin: 10px 0;
+        }
+    }
+}
+
+@media screen and (min-width: 1024px) {}

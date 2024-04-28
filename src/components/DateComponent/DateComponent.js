@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { Subscribe } from '../Subscribe/Subscribe'
+import { Routes, Route, Link } from "react-router-dom";
+import App from "../../App";
 
 export const DateComponent = (props) => {
 
@@ -30,7 +32,7 @@ export const DateComponent = (props) => {
             </div>
 
             {props.screenSize < 1024 && <Subscribe />}
-            {props.screenSize > 1024 && <p className="nyt-title">THE NEW YORK TIMES</p>}
+            {props.screenSize > 1024 && <p className="nyt-title"><Link to={'/'}>THE NEW YORK TIMES</Link></p>}
         </div>
     )
 }

@@ -1,1 +1,7 @@
-/*# sourceMappingURL=search.css.map */
+.wrap-search .search-img-container .search-img {
+  cursor: pointer;
+}
+.wrap-search .search-submit a {
+  text-decoration: none;
+  color: black;
+}

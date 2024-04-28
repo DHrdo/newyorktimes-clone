@@ -1,0 +1,21 @@
+.search-main {
+  padding: 10px 0 0 10px;
+}
+.search-main .search-title {
+  text-align: center;
+  padding: 20px;
+}
+.search-main .wrap-search-news {
+  padding: 20px 0;
+  border-bottom: 1px solid grey;
+}
+.search-main .wrap-search-news .search-headline {
+  font-size: 1.4em;
+}
+.search-main .wrap-search-news .search-abstract {
+  margin-top: 10px;
+  font-size: 1em;
+}
+.search-main .wrap-search-news:last-child {
+  border-bottom: unset;
+}

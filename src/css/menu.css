@@ -21,9 +21,11 @@
   width: 100%;
   position: relative;
   z-index: 999;
+  cursor: pointer;
 }
 .header-mobile .wrap-header .hamburger-menu-icon-container .hamburger-menu-opened {
   width: 100%;
+  cursor: pointer;
 }
 .header-mobile .wrap-header .nyt-title {
   font-family: "Caveat";
@@ -72,17 +74,31 @@
   padding: 20px 0;
   border-bottom: 1px solid grey;
 }
+.header-mobile .menu-content .wrap-sections .section .section-title {
+  cursor: pointer;
+}
 .header-mobile .menu-content .wrap-sections .section .subcategories {
   list-style-type: none;
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
-.header-mobile .menu-content .wrap-sections .section .subcategories .section-subtitle-title {
+.header-mobile .menu-content .wrap-sections .section .subcategories .wrap-subtitle-content .section-subtitle-title {
   color: gray;
   margin-top: 20px;
 }
+.header-mobile .menu-content .wrap-sections .section .subcategories .wrap-subtitle-content .subtitle {
+  font-weight: bold;
+  margin: 3px;
+}
+.header-mobile .menu-content .wrap-sections .section .subcategories .wrap-subtitle-content .subtitle a {
+  text-decoration: none;
+  color: black;
+}
 .header-mobile .menu-content .wrap-sections .section .subcategories .wrap-section-subtitle-newsletters {
+  grid-column: 1/-1;
+}
+.header-mobile .menu-content .wrap-sections .section .subcategories .wrap-section-subtitle-newsletters .section-subtitle-title {
   grid-column: 1/-1;
 }
 .header-mobile .menu-content .wrap-sections .section .subcategories .wrap-section-subtitle-newsletters .wrap-newsletter-content {
@@ -102,17 +118,6 @@
   font-size: 0.9em;
   text-align: left;
   font-weight: 300;
-}
-.header-mobile .menu-content .wrap-sections .section .subcategories .subtitle {
-  font-weight: bold;
-  margin: 3px;
-}
-.header-mobile .menu-content .wrap-sections .section .subcategories .subtitle a {
-  text-decoration: none;
-  color: black;
-}
-.header-mobile .menu-content .wrap-sections .section .subcategories .section-subtitle-title {
-  grid-column: 1/-1;
 }
 .header-mobile .menu-content .wrap-sections .section-divider {
   width: 100%;
@@ -188,4 +193,4 @@
 .arrow {
   float: right;
   margin-right: 20px;
-}/*# sourceMappingURL=menu.css.map */
+}

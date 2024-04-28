@@ -2,6 +2,7 @@
     font-family: 'Caveat';
     src: url(../fonts/Caveat.ttf);
 }
+
 .header-mobile {
     max-width: 1280px;
     margin: 0 auto;
@@ -22,10 +23,12 @@
                 width: 100%;
                 position: relative;
                 z-index: 999;
+                cursor: pointer;
             }
 
             .hamburger-menu-opened {
                 width: 100%;
+                cursor: pointer;
             }
         }
 
@@ -85,6 +88,10 @@
                 padding: 20px 0;
                 border-bottom: 1px solid grey;
 
+                .section-title {
+                    cursor: pointer;
+                }
+
                 .subcategories {
                     list-style-type: none;
                     width: 100%;
@@ -93,14 +100,30 @@
                     grid-template-columns: 1fr 1fr;
 
 
-                    .section-subtitle-title {
-                        color: gray;
-                        margin-top: 20px;
+                    .wrap-subtitle-content {
+                        .section-subtitle-title {
+                            color: gray;
+                            margin-top: 20px;
+                        }
+
+
+                        .subtitle {
+                            font-weight: bold;
+                            margin: 3px;
+
+                            a {
+                                text-decoration: none;
+                                color: black;
+                            }
+                        }
                     }
 
                     .wrap-section-subtitle-newsletters {
-
                         grid-column: 1 / -1;
+
+                        .section-subtitle-title {
+                            grid-column: 1 / -1;
+                        }
 
                         .wrap-newsletter-content {
 
@@ -125,21 +148,8 @@
                             }
                         }
                     }
-
-                    .subtitle {
-                        font-weight: bold;
-                        margin: 3px;
-
-                        a {
-                            text-decoration: none;
-                            color: black;
-                        }
-                    }
-
-                    .section-subtitle-title {
-                        grid-column: 1 / -1;
-                    }
                 }
+
             }
 
             .section-divider {
@@ -166,7 +176,7 @@
 
             .section {
                 margin: 0 2px;
-                
+
                 .section-title {
                     cursor: pointer;
                     font-weight: 100;
@@ -207,6 +217,7 @@
                             font-weight: 100;
                             grid-column: 1 / -1;
                         }
+
                         .subtitle {
                             color: rgb(51, 51, 51);
                         }
@@ -222,6 +233,7 @@
                                 font-weight: 100;
                                 font-size: 1em;
                             }
+
                             .newsletter-img {
                                 margin-top: 10px;
                                 width: 36px;

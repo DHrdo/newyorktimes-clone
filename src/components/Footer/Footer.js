@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 export const Footer = (props) => {
     return (
         <div className={!props.isMenuOpened ? "footer" : "displayNone"}>
@@ -8,95 +8,94 @@ export const Footer = (props) => {
                 <div className="wrap-footer-desktop">
                     <ul className="footer-list">
                         <h6 className="footer-list-title">NEWS</h6>
-                        <li><a href="#">Home Page</a></li>
-                        <li><a href="#">World</a></li>
-                        <li><a href="#">Coronavirus</a></li>
-                        <li><a href="#">U.S.</a></li>
-                        <li><a href="#">Politics</a></li>
-                        <li><a href="#">New York</a></li>
-                        <li><a href="#">Business</a></li>
-                        <li><a href="#">Tech</a></li>
-                        <li><a href="#">Science</a></li>
-                        <li><a href="#">Sports</a></li>
-                        <li><a href="#">Wildfire Tracker</a></li>
-                        <li><a href="#">Obituaries</a></li>
-                        <li><a href="#">Today's Paper</a></li>
-                        <li><a href="#">Corrections</a></li>
-                        <li><a href="#">Trending</a></li>
+                        <li><Link to="/">Home Page</Link></li>
+                        <li><Link to="/world">World</Link></li>
+                        <li><Link to="/coronavirus">Coronavirus</Link></li>
+                        <li><Link to="/us">U.S.</Link></li>
+                        <li><Link to="/politics">Politics</Link></li>
+                        <li><Link to="/newyork">New York</Link></li>
+                        <li><Link to="/business">Business</Link></li>
+                        <li><Link to="/tech">Tech</Link></li>
+                        <li><Link to="/science">Science</Link></li>
+                        <li><Link to="/sports">Sports</Link></li>
+                        <li><Link to="/wildfiretracker">Wildfire Tracker</Link></li>
+                        <li><Link to="/obituaries">Obituaries</Link></li>
+                        <li><Link to="/todayspaper">Today's Paper</Link></li>
+                        <li><Link to="/corrections">Corrections</Link></li>
+                        <li><Link to="/trending">Trending</Link></li>
                     </ul>
                     <ul className="footer-list">
                         <h6 className="footer-list-title">OPINION</h6>
-                        <li><a href="#">Today's Opinion</a></li>
-                        <li><a href="#">Columnists</a></li>
-                        <li><a href="#">Editorials</a></li>
-                        <li><a href="#">Guest Essays</a></li>
-                        <li><a href="#">Letters</a></li>
-                        <li><a href="#">Sunday Opinion</a></li>
-                        <li><a href="#">Opinion Video</a></li>
+                        <li><Link to="/">Today's Opinion</Link></li>
+                        <li><Link to="/">Columnists</Link></li>
+                        <li><Link to="/">Editorials</Link></li>
+                        <li><Link to="/">Guest Essays</Link></li>
+                        <li><Link to="/">Letters</Link></li>
+                        <li><Link to="/">Sunday Opinion</Link></li>
+                        <li><Link to="/">Opinion Video</Link></li>
                     </ul>
                     <ul className="footer-list">
                         <h6 className="footer-list-title">ARTS</h6>
-                        <li><a href="#">Today's Arts</a></li>
-                        <li><a href="#">Art & Design</a></li>
-                        <li><a href="#">Best Sellers Book List</a></li>
-                        <li><a href="#">Dance</a></li>
-                        <li><a href="#">Movies</a></li>
-                        <li><a href="#">Music</a></li>
-                        <li><a href="#">Pop Culture</a></li>
-                        <li><a href="#">Television</a></li>
-                        <li><a href="#">Theater</a></li>
-                        <li><a href="#">Video: Arts</a></li>
+                        <li><Link to="/">Today's Arts</Link></li>
+                        <li><Link to="/">Art & Design</Link></li>
+                        <li><Link to="/">Best Sellers Book List</Link></li>
+                        <li><Link to="/">Dance</Link></li>
+                        <li><Link to="/">Movies</Link></li>
+                        <li><Link to="/">Music</Link></li>
+                        <li><Link to="/">Pop Culture</Link></li>
+                        <li><Link to="/">Television</Link></li>
+                        <li><Link to="/">Theater</Link></li>
+                        <li><Link to="/">Video: Arts</Link></li>
                     </ul>
                     <ul className="footer-list">
                         <h6 className="footer-list-title">LIVING</h6>
-                        <li><a href="#">Automotive</a></li>
-                        <li><a href="#">Games</a></li>
-                        <li><a href="#">Education</a></li>
-                        <li><a href="#">Health</a></li>
-                        <li><a href="#">Jobs</a></li>
-                        <li><a href="#">Love</a></li>
-                        <li><a href="#">Magazine</a></li>
-                        <li><a href="#">Parenting</a></li>
-                        <li><a href="#">Real Estate</a></li>
-                        <li><a href="#">Style</a></li>
-                        <li><a href="#">T Magazine</a></li>
-                        <li><a href="#">Travel</a></li>
+                        <li><Link to="/">Automotive</Link></li>
+                        <li><Link to="/">Games</Link></li>
+                        <li><Link to="/">Education</Link></li>
+                        <li><Link to="/">Health</Link></li>
+                        <li><Link to="/">Jobs</Link></li>
+                        <li><Link to="/">Love</Link></li>
+                        <li><Link to="/">Magazine</Link></li>
+                        <li><Link to="/">Parenting</Link></li>
+                        <li><Link to="/">Real Estate</Link></li>
+                        <li><Link to="/">Style</Link></li>
+                        <li><Link to="/">T Magazine</Link></li>
+                        <li><Link to="/">Travel</Link></li>
                     </ul>
                     <ul className="footer-list">
                         <h6 className="footer-list-title">MORE</h6>
-                        <li><a href="#">Reader Center</a></li>
-                        <li><a href="#">The Athletic</a></li>
-                        <li><a href="#">Wirecutter</a></li>
-                        <li><a href="#">Cooking</a></li>
-                        <li><a href="#">Headway</a></li>
-                        <li><a href="#">Live Events</a></li>
-                        <li><a href="#">The Learning Networks</a></li>
-                        <li><a href="#">Podcasts</a></li>
-                        <li><a href="#">Video</a></li>
-                        <li><a href="#">Graphics</a></li>
-                        <li><a href="#">TimeMachine</a></li>
-                        <li><a href="#">Times Store</a></li>
-                        <li><a href="#">Manage My Account</a></li>
-                        <li><a href="#">Gift Articles</a></li>
-                        <li><a href="#">NYTLicensing</a></li>
+                        <li><Link to="/">Reader Center</Link></li>
+                        <li><Link to="/">The Athletic</Link></li>
+                        <li><Link to="/">Wirecutter</Link></li>
+                        <li><Link to="/">Cooking</Link></li>
+                        <li><Link to="/">Headway</Link></li>
+                        <li><Link to="/">Live Events</Link></li>
+                        <li><Link to="/">The Learning Networks</Link></li>
+                        <li><Link to="/">Podcasts</Link></li>
+                        <li><Link to="/">Video</Link></li>
+                        <li><Link to="/">Graphics</Link></li>
+                        <li><Link to="/">TimeMachine</Link></li>
+                        <li><Link to="/">Times Store</Link></li>
+                        <li><Link to="/">Manage My Account</Link></li>
+                        <li><Link to="/">Gift Articles</Link></li>
+                        <li><Link to="/">NYTLicensing</Link></li>
                     </ul>
                     <ul className="footer-list">
                         <h6 className="footer-list-title">SUBSCRIBE</h6>
-                        <li><a href="#" className="bolder">Home Delivery</a></li>
-                        <li><a href="#" className="bolder">Digital Subscriptions</a></li>
-                        <li><a href="#" className="bolder">Games</a></li>
-                        <li><a href="#" className="bolder">Cooking</a></li>
+                        <li><Link to="/homedelivery">Home Delivery</Link></li>
+                        <li><Link to="/digitalsubscriptions">Digital Subscriptions</Link></li>
+                        <li><Link to="/games">Games</Link></li>
+                        <li><Link to="/cooking">Cooking</Link></li>
                     </ul>
                 </div>
                 :
                 <div className={"wrap-footer-mobile"}>
                     <ul className="footer-list">
-                        <li><a href="#">NEWS</a></li>
-                        <li><a href="#">OPINION</a></li>
-                        <li><a href="#">ARTS</a></li>
-                        <li><a href="#">ARTS</a></li>
-                        <li><a href="#">LIVING</a></li>
-                        <li><a href="#">LISTINGS & MORE</a></li>
+                        <li><Link to="/news">NEWS</Link></li>
+                        <li><Link to="/opinion">OPINION</Link></li>
+                        <li><Link to="/arts">ARTS</Link></li>
+                        <li><Link to="/living">LIVING</Link></li>
+                        <li><Link to="/listingsandmore">LISTINGS & MORE</Link></li>
                     </ul>
                 </div>
             }
