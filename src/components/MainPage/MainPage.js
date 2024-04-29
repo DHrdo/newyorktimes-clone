@@ -379,13 +379,13 @@ export const MainPage = (props) => {
     };
 
 
-    const API_KEY = 'cIi5dphyFv4WN0ZEh6bYsH6xqpMTVPDb'
-    //process.env.REACT_APP_API_KEY;
+    const API_KEY = process.env.REACT_APP_API_KEY;
+    //'cIi5dphyFv4WN0ZEh6bYsH6xqpMTVPDb'
 
     useEffect(() => {
         APICall(`https://api.nytimes.com/svc/topstories/v2/home.json?api-key=${API_KEY}`, setNews);
-        //APICall(`https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${getRandomCountries()}&api-key=${API_KEY}`, setOtherNews);
-        //APICall(`https://api.nytimes.com/svc/search/v2/articlesearch.json?fq=news_desk:(${getNewsDeskItem()})&api-key=${API_KEY}`, setRandomNews);
+        APICall(`https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${getRandomCountries()}&api-key=${API_KEY}`, setOtherNews);
+        APICall(`https://api.nytimes.com/svc/search/v2/articlesearch.json?fq=news_desk:(${getNewsDeskItem()})&api-key=${API_KEY}`, setRandomNews);
     }, []);
 
 
