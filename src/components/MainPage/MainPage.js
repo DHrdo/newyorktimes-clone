@@ -2,11 +2,10 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Loading } from '../Loading/Loading';
 
-/*
+
 if (process.env.NODE_ENV !== 'production') {
     require('dotenv').config();
 };
-*/
 
 
 /* FUNZIONI USATE IN MAINPAGE.JS, SUBCATEGORY.JS, SEARCH.JS */

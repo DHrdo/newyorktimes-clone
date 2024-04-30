@@ -3,6 +3,12 @@ import { Helmet } from 'react-helmet';
 import { APICall } from '../MainPage/MainPage'
 import { Loading } from './../Loading/Loading';
 
+if (process.env.NODE_ENV !== 'production') {
+    require('dotenv').config();
+};
+
+
+
 export const Subcategory = (
     {
         isMenuOpened,
@@ -16,7 +22,7 @@ export const Subcategory = (
     const [subCategoryNews, setSubCategoryNews] = useState([])
 
     //CHIAMATA API LER NEWS DELLE SOTTOCATEGORIE
-    const API_KEY = 'cIi5dphyFv4WN0ZEh6bYsH6xqpMTVPDb';
+    const API_KEY = process.env.REACT_APP_API_KEY;
     useEffect(() => {
         APICall(`https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${subname}&api-key=${API_KEY}`, setSubCategoryNews, setLoading);
     }, []);
