@@ -31,13 +31,26 @@ export function saveNewsData(responseData, setArray) {
     setArray(newsObj)
 };
 
-export const MainPage = (props) => {
+export function APICall(url, saveToState, setLoading) {
+    axios.get(url)
+        .then(response => {
+            const responseData = response.data.results || response.data.response.docs
+            saveNewsData(responseData, saveToState);
+            setLoading(false);
+        })
+        .catch(error => {
+            console.error('Request Error', error);
+            setLoading(false);
+        })
+};
+
+
+export const MainPage = ({ isMenuOpened, screenSize, loading, setLoading }) => {
 
 
     const [news, setNews] = useState([]);
     const [otherNews, setOtherNews] = useState([]);
     const [randomNews, setRandomNews] = useState([]);
-    const [loading, setLoading] = useState(true)
 
 
     const getRandomCountries = () => {
@@ -365,27 +378,13 @@ export const MainPage = (props) => {
 
 
 
-    function APICall(url, saveToState) {
-        axios.get(url)
-            .then(response => {
-                const responseData = response.data.results || response.data.response.docs
-                saveNewsData(responseData, saveToState);
-                setLoading(false);
-            })
-            .catch(error => {
-                console.error('Request Error', error);
-                setLoading(false);
-            })
-    };
-
-
     const API_KEY = process.env.REACT_APP_API_KEY;
     //'cIi5dphyFv4WN0ZEh6bYsH6xqpMTVPDb'
 
     useEffect(() => {
-        APICall(`https://api.nytimes.com/svc/topstories/v2/home.json?api-key=${API_KEY}`, setNews);
-        APICall(`https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${getRandomCountries()}&api-key=${API_KEY}`, setOtherNews);
-        APICall(`https://api.nytimes.com/svc/search/v2/articlesearch.json?fq=news_desk:(${getNewsDeskItem()})&api-key=${API_KEY}`, setRandomNews);
+        APICall(`https://api.nytimes.com/svc/topstories/v2/home.json?api-key=${API_KEY}`, setNews, setLoading);
+        //APICall(`https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${getRandomCountries()}&api-key=${API_KEY}`, setOtherNews, setLoading);
+        //APICall(`https://api.nytimes.com/svc/search/v2/articlesearch.json?fq=news_desk:(${getNewsDeskItem()})&api-key=${API_KEY}`, setRandomNews, setLoading);
     }, []);
 
 
@@ -417,8 +416,8 @@ export const MainPage = (props) => {
                 {/* Immagine, didascalia e attributi della notizia */}
                 <div className="wrap-image-details">
                     <a href={newsURL}>
-                        <img className="news-image" src={url} alt="URL"/>
-                        <p className="news-image-description">{props.screenSize < 768 && caption.length > 100 ? '' : caption}</p>
+                        <img className="news-image" src={url} alt="URL" />
+                        <p className="news-image-description">{screenSize < 768 && caption.length > 100 ? '' : caption}</p>
                         <p className="news-image-byline">{byline}</p>
                         <p className="news-image-copyright">{copyright}</p>
                     </a>
@@ -439,14 +438,14 @@ export const MainPage = (props) => {
                 <p className="news-abstract-otherNews">
                     {/* Limita il riassunto a 100 caratteri su schermi piccoli */}
                     {
-                        props.screenSize < 768 ?
+                        screenSize < 768 ?
                             (abstract.length < 100 ? abstract : abstract.slice(0, 100)) :
                             abstract.slice(0, 500)
                     }
                 </p>
                 {/* Mostra "..." se il riassunto è troppo lungo */}
                 {
-                    props.screenSize > 768 ? (abstract.length > 500 && <p className="see-more-abstract">...</p>) :
+                    screenSize > 768 ? (abstract.length > 500 && <p className="see-more-abstract">...</p>) :
                         (abstract.length > 100 && <p className="see-more-abstract">...</p>)
                 }
             </section>
@@ -467,7 +466,7 @@ export const MainPage = (props) => {
 
     return (
 
-        <main className={!props.isMenuOpened ? "main-page" : "displayNone"}>
+        <main className={!isMenuOpened ? "main-page" : "displayNone"}>
             {
                 loading ? <Loading /> :
                     <div className="wrap-grid">

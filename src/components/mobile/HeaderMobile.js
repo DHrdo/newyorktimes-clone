@@ -4,7 +4,7 @@ import { Menu } from "../Menu/Menu"
 import { UserMobile } from "../mobile/UserMobile"
 import { DateComponent } from "../DateComponent/DateComponent"
 
-export const HeaderMobile = ({ screenSize, isMenuOpened, handleSearchClick, handleToggleMenu, handleGetSearchInputText, handleGetLinkText, subName, searchState }) => {
+export const HeaderMobile = ({ screenSize, isMenuOpened, handleSearchClick, handleToggleMenu, handleGetSearchInputText, setLinkText, subName, searchState }) => {
 
 
     return (
@@ -41,12 +41,12 @@ export const HeaderMobile = ({ screenSize, isMenuOpened, handleSearchClick, hand
                     screenSize={screenSize}
                     handleSearchClick={handleSearchClick}
                     handleGetSearchInputText={handleGetSearchInputText}
-                    handleGetLinkText={handleGetLinkText}
+                    setLinkText={setLinkText}
                     subName={subName}
                     searchState={searchState}
                 />
 
-                <Menu />
+                <Menu setLinkText={setLinkText} />
             </div>
             <DateComponent screenSize={screenSize} isMenuOpened={isMenuOpened} />
         </header>

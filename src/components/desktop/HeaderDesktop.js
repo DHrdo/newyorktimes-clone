@@ -9,7 +9,7 @@ import { DateComponent } from "../DateComponent/DateComponent";
 export const HeaderDesktop = (
     {
         screenSize,
-        handleGetLinkText,
+        setLinkText,
         handleGetSearchInputText,
         searchState,
         subName
@@ -33,7 +33,7 @@ export const HeaderDesktop = (
 
             <DateComponent screenSize={screenSize} />
 
-            <Menu handleGetLinkText={handleGetLinkText} />
+            <Menu setLinkText={setLinkText} />
         </div>
     )
 }

@@ -9,85 +9,80 @@ import { Route, Routes, useLocation } from 'react-router-dom';
 import { Subcategory } from './components/Section/Subcategory.js';
 import { SearchPage } from './components/SearchPage/SearchPage.js';
 
-
-
+// Definizione del componente App
 const App = () => {
+
+
+  // ----------------- Definizione degli stati -----------------
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [isMenuOpened, setIsMenuOpened] = useState(false);
   const [subName, setSubName] = useState('');
-
-
-  //FUNZIONE PER SETTARE LO STATE DEI LINK MENU
-
   const [linkText, setLinkText] = useState('');
-  const GetLinkText = event => setLinkText(event.target.textContent);
+  console.log('linkText, app', linkText)
+  const [userInputText, setUserInputText] = useState('');
+  const [loading, setLoading] = useState(true);
 
-  //---------------------------------------------------------------------------------
 
 
-  //OTTENGO L'URL
+  // ----------------- Hook per ottenere la posizione corrente ----------------- \\
   const location = useLocation();
+
+  // ----------------- useEffect per gestire il link attivo nella navigazione ----------------- \\
   useEffect(() => {
     if (location.pathname === '/') {
-      setLinkText(null);
-    };
-  }, [location.pathname]);
-
-  useEffect(() => {
+      setLinkText(null); // Resetta il link attivo se si è nella homepage 
+    }
     const subName = location.pathname.split('/')[2];
     setSubName(subName);
-  }, [location.pathname, subName]);
+  }, [location.pathname]);
 
 
-  //FUNZIONE PER APRIRE E CHIUDERE IL MENU
 
-  const handleToggleMenu = () => setIsMenuOpened(prevMenuState => !prevMenuState);
-
-  //---------------------------------------------------------------------------------
-
-
-  //OTTENGO LA DIMENSIONE DELLA FINESTRA DEL BROWSER
-  useEffect(() => getWindowSize(), [windowWidth]);
-  function getWindowSize() {
-    setWindowWidth(window.innerWidth);
+  // ----------------- useEffect per ottenere la dimensione della finestra del browser ----------------- \\
+  useEffect(() => {
+    const getWindowSize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+    getWindowSize();
     window.addEventListener('resize', getWindowSize);
     return () => window.removeEventListener('resize', getWindowSize);
-  };
-  //---------------------------------------------------------------------------------
+  }, []);
 
 
-  //------------FUNZIONE DI RICERCA------------\\
+  // Funzione per gestire l'apertura e la chiusura del menu mobile
+  const handleToggleMenu = () => setIsMenuOpened(prevMenuState => !prevMenuState);
 
-  const [userInputText, setUserInputText] = useState('');
+  // Funzione per ottenere il testo di input dalla barra di ricerca
   const getSearchInputText = event => setUserInputText(event.target.value);
-  //-------------------------------------------\\
 
+
+
+  // ----------------- Renderizzazione del componente ----------------- \\
   return (
     <div className='App'>
+
       <Helmet>
         <title>New York Times Clone</title>
       </Helmet>
 
+      {/* ----------------- Renderizza l'header mobile o desktop in base alla larghezza della finestra ----------------- */}
+      {windowWidth > 1024 ? (
+        <HeaderDesktop
+          screenSize={windowWidth}
+          setLinkText={setLinkText}
+          handleGetSearchInputText={getSearchInputText}
+        />
+      ) : (
+        <HeaderMobile
+          screenSize={windowWidth}
+          handleToggleMenu={handleToggleMenu}
+          isMenuOpened={isMenuOpened}
+          setLinkText={setLinkText}
+          handleGetSearchInputText={getSearchInputText}
+        />
+      )}
 
-      {
-        windowWidth > 1024
-          ?
-          <HeaderDesktop
-            screenSize={windowWidth}
-            handleGetLinkText={GetLinkText} //FUNZIONE PER SETTARE LO STATE DEI LINK MENU
-            handleGetSearchInputText={getSearchInputText} //FUNZIONE PER SETTARE LO STATE DEL SEARCH
-          />
-
-          :
-
-          <HeaderMobile
-            screenSize={windowWidth}
-            handleToggleMenu={handleToggleMenu}
-            isMenuOpened={isMenuOpened}
-            handleGetLinkText={GetLinkText} //FUNZIONE PER SETTARE LO STATE DEI LINK MENU
-            handleGetSearchInputText={getSearchInputText} //FUNZIONE PER SETTARE LO STATE DEL SEARCH
-          />
-      }
+      {/* ----------------- Definizione delle rotte ----------------- */}
       <Routes>
         <Route
           path='/'
@@ -95,6 +90,8 @@ const App = () => {
             <MainPage
               screenSize={windowWidth}
               isMenuOpened={isMenuOpened}
+              setLoading={setLoading}
+              loading={loading}
             />
           }
         />
@@ -108,6 +105,8 @@ const App = () => {
               isMenuOpened={isMenuOpened}
               subname={subName}
               linkText={linkText}
+              setLoading={setLoading}
+              loading={loading}
             />
           }
         />
@@ -120,16 +119,21 @@ const App = () => {
               handleToggleMenu={handleToggleMenu}
               isMenuOpened={isMenuOpened}
               userInputText={userInputText}
+              setLoading={setLoading}
+              loading={loading}
             />
           }
         />
-
       </Routes>
 
-      <Footer screenSize={windowWidth} isMenuOpened={isMenuOpened} />
+
+      {/* ----------------- Renderizza il footer ----------------- */}
+      <Footer
+        screenSize={windowWidth}
+        isMenuOpened={isMenuOpened}
+      />
     </div>
-  )
+  );
 };
 
 export default App;
-

@@ -1,26 +1,16 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
-import { saveNewsData } from "../MainPage/MainPage";
+import { APICall } from '../MainPage/MainPage'
+import { Loading } from './../Loading/Loading';
 
 
-export const SearchPage = ({ isMenuOpened, userInputText }) => {
+export const SearchPage = ({ isMenuOpened, userInputText, setLoading, loading }) => {
 
     const [searchNews, setSearchNews] = useState([]);
-    function searchAPICall(url, saveToState) {
-        axios.get(url)
-            .then(response => {
-                const responseData = response.data.results || response.data.response.docs;
-                saveNewsData(responseData, saveToState);
-            })
-            .catch(error => console.error(error));
-    }
-
-
 
     //CHIAMATA API LER NEWS DELLE SOTTOCATEGORIE
     const API_KEY = 'cIi5dphyFv4WN0ZEh6bYsH6xqpMTVPDb';
     useEffect(() => {
-        searchAPICall(`https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${userInputText.split(' ').join('')}&api-key=${API_KEY}`, setSearchNews);
+        APICall(`https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${userInputText.split(' ').join('')}&api-key=${API_KEY}`, setSearchNews, setLoading);
     }, []);
 
 
@@ -36,9 +26,15 @@ export const SearchPage = ({ isMenuOpened, userInputText }) => {
     });
 
     return (
-        <div className={!isMenuOpened ? "search-main" : "displayNone"}>
-            <h2 className="search-title">{userInputText.toUpperCase()}</h2>
-            {mapSearchNews}
-        </div>
+        <main className={!isMenuOpened ? "search-main" : "displayNone"}>
+            {
+                loading ?
+                    <Loading /> :
+                    <div className="search-main-content">
+                        <h2 className="search-title">{userInputText.toUpperCase()}</h2>
+                        {mapSearchNews}
+                    </div>
+            }
+        </main>
     );
 };

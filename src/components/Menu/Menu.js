@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-export const Menu = ({ handleGetLinkText }) => {
+export const Menu = ({ setLinkText }) => {
 
     const [openSectionId, setOpenSectionId] = useState(null);
     function handleToggleCategories(sectionId) {
@@ -19,35 +19,35 @@ export const Menu = ({ handleGetLinkText }) => {
                     <ul className={openSectionId === "U.S." ? "subcategories" : "displayNone"}>
                         <div className="wrap-subtitle-content">
                             <h4 className="section-subtitle-title">SECTIONS</h4>
-                            <li className="subtitle"><Link to={"/subcategory/us"} onClick={(event) => handleGetLinkText(event)}>U.S.</Link></li>
-                            <li className="subtitle"><Link to="/subcategory/climate" onClick={(event) => handleGetLinkText(event)}>Climate</Link></li>
-                            <li className="subtitle"><Link to="/subcategory/politics" onClick={(event) => handleGetLinkText(event)}>Politics</Link></li>
-                            <li className="subtitle"><Link to="/subcategory/sports" onClick={(event) => handleGetLinkText(event)}>Sports</Link></li>
-                            <li className="subtitle"><Link to="/subcategory/newyork" onClick={(event) => handleGetLinkText(event)}>New York</Link></li>
-                            <li className="subtitle"><Link to="/subcategory/business" onClick={(event) => handleGetLinkText(event)}>Business</Link></li>
-                            <li className="subtitle"><Link to="/subcategory/california" onClick={(event) => handleGetLinkText(event)}>California</Link></li>
-                            <li className="subtitle"><Link to="/subcategory/tech" onClick={(event) => handleGetLinkText(event)}>Tech</Link></li>
-                            <li className="subtitle"><Link to="/subcategory/education" onClick={(event) => handleGetLinkText(event)}>Education</Link></li>
-                            <li className="subtitle"><Link to={"/subcategory/theupshot"} onClick={(event) => handleGetLinkText(event)}>The Upshot</Link></li>
-                            <li className="subtitle"><Link to="/subcategory/health" onClick={(event) => handleGetLinkText(event)}>Health</Link></li>
-                            <li className="subtitle"><Link to="/subcategory/themagazine" onClick={(event) => handleGetLinkText(event)}>The Magazine</Link></li>
-                            <li className="subtitle"><Link to="/subcategory/obituaries" onClick={(event) => handleGetLinkText(event)}>Obituaries</Link></li>
-                            <li className="subtitle"><Link to="/subcategory/science" onClick={(event) => handleGetLinkText(event)}>Science</Link></li>
+                            <li className="subtitle"><Link to={"/subcategory/us"} onClick={(event) => setLinkText(event.target.textContent)}>U.S.</Link></li>
+                            <li className="subtitle"><Link to="/subcategory/climate" onClick={(event) => setLinkText(event.target.textContent)}>Climate</Link></li>
+                            <li className="subtitle"><Link to="/subcategory/politics" onClick={(event) => setLinkText(event.target.textContent)}>Politics</Link></li>
+                            <li className="subtitle"><Link to="/subcategory/sports" onClick={(event) => setLinkText(event.target.textContent)}>Sports</Link></li>
+                            <li className="subtitle"><Link to="/subcategory/newyork" onClick={(event) => setLinkText(event.target.textContent)}>New York</Link></li>
+                            <li className="subtitle"><Link to="/subcategory/business" onClick={(event) => setLinkText(event.target.textContent)}>Business</Link></li>
+                            <li className="subtitle"><Link to="/subcategory/california" onClick={(event) => setLinkText(event.target.textContent)}>California</Link></li>
+                            <li className="subtitle"><Link to="/subcategory/tech" onClick={(event) => setLinkText(event.target.textContent)}>Tech</Link></li>
+                            <li className="subtitle"><Link to="/subcategory/education" onClick={(event) => setLinkText(event.target.textContent)}>Education</Link></li>
+                            <li className="subtitle"><Link to={"/subcategory/theupshot"} onClick={(event) => setLinkText(event.target.textContent)}>The Upshot</Link></li>
+                            <li className="subtitle"><Link to="/subcategory/health" onClick={(event) => setLinkText(event.target.textContent)}>Health</Link></li>
+                            <li className="subtitle"><Link to="/subcategory/themagazine" onClick={(event) => setLinkText(event.target.textContent)}>The Magazine</Link></li>
+                            <li className="subtitle"><Link to="/subcategory/obituaries" onClick={(event) => setLinkText(event.target.textContent)}>Obituaries</Link></li>
+                            <li className="subtitle"><Link to="/subcategory/science" onClick={(event) => setLinkText(event.target.textContent)}>Science</Link></li>
                         </div>
 
                         <div className="wrap-subtitle-content">
                             <h4 className="section-subtitle-title">U.S. POLITICS</h4>
-                            <li className="subtitle"><Link to="/subcategory/2024elections" onClick={(event) => handleGetLinkText(event)}>2024 Elections</Link></li>
-                            <li className="subtitle"><Link to="/subcategory/supremecourt" onClick={(event) => handleGetLinkText(event)}>SupremeCourt</Link></li>
-                            <li className="subtitle"><Link to="/subcategory/congress" onClick={(event) => handleGetLinkText(event)}>Congress</Link></li>
-                            <li className="subtitle"><Link to="/subcategory/bidenadministration" onClick={(event) => handleGetLinkText(event)}>Biden Administration</Link></li>
+                            <li className="subtitle"><Link to="/subcategory/2024elections" onClick={(event) => setLinkText(event.target.textContent)}>2024 Elections</Link></li>
+                            <li className="subtitle"><Link to="/subcategory/supremecourt" onClick={(event) => setLinkText(event.target.textContent)}>SupremeCourt</Link></li>
+                            <li className="subtitle"><Link to="/subcategory/congress" onClick={(event) => setLinkText(event.target.textContent)}>Congress</Link></li>
+                            <li className="subtitle"><Link to="/subcategory/bidenadministration" onClick={(event) => setLinkText(event.target.textContent)}>Biden Administration</Link></li>
                         </div>
                         <div className="wrap-subtitle-content">
                             <h4 className="section-subtitle-title">TOP STORIES</h4>
-                            <li className="subtitle"><Link to="/subcategory/trumpinvestigation" onClick={(event) => handleGetLinkText(event)}>Trump Investigations</Link></li>
-                            <li className="subtitle"><Link to="/subcategory/immigration" onClick={(event) => handleGetLinkText(event)}>Immigration</Link></li>
-                            <li className="subtitle"><Link to="/subcategory/abortion" onClick={(event) => handleGetLinkText(event)}>Abortion</Link></li>
-                            <li className="subtitle"><Link to="/subcategory/ericadams" onClick={(event) => handleGetLinkText(event)}>The Eric Adams Administration</Link></li>
+                            <li className="subtitle"><Link to="/subcategory/trumpinvestigation" onClick={(event) => setLinkText(event.target.textContent)}>Trump Investigations</Link></li>
+                            <li className="subtitle"><Link to="/subcategory/immigration" onClick={(event) => setLinkText(event.target.textContent)}>Immigration</Link></li>
+                            <li className="subtitle"><Link to="/subcategory/abortion" onClick={(event) => setLinkText(event.target.textContent)}>Abortion</Link></li>
+                            <li className="subtitle"><Link to="/subcategory/ericadams" onClick={(event) => setLinkText(event.target.textContent)}>The Eric Adams Administration</Link></li>
                         </div>
 
                         <div className="wrap-section-subtitle-newsletters">
@@ -73,24 +73,24 @@ export const Menu = ({ handleGetLinkText }) => {
                     <ul className={openSectionId === "World" ? "subcategories" : "displayNone"}>
                         <div className="wrap-subtitle-content">
                             <h4 className="section-subtitle-title">SECTIONS</h4>
-                            <li className="subtitle"><Link to="/subcategory/world" onClick={(event) => handleGetLinkText(event)}>World</Link></li>
-                            <li className="subtitle"><Link to="/subcategory/europe" onClick={(event) => handleGetLinkText(event)}>Europe</Link></li>
-                            <li className="subtitle"><Link to="/subcategory/africa" onClick={(event) => handleGetLinkText(event)}>Africa</Link></li>
-                            <li className="subtitle"><Link to="/subcategory/middleeast" onClick={(event) => handleGetLinkText(event)}>Middle East</Link></li>
-                            <li className="subtitle"><Link to="/subcategory/americas" onClick={(event) => handleGetLinkText(event)}>Americas</Link></li>
-                            <li className="subtitle"><Link to="/subcategory/science" onClick={(event) => handleGetLinkText(event)}>Science</Link></li>
-                            <li className="subtitle"><Link to="/subcategory/asia" onClick={(event) => handleGetLinkText(event)}>Asia</Link></li>
-                            <li className="subtitle"><Link to="/subcategory/climate" onClick={(event) => handleGetLinkText(event)}>Climate</Link></li>
-                            <li className="subtitle"><Link to="/subcategory/australia" onClick={(event) => handleGetLinkText(event)}>Australia</Link></li>
-                            <li className="subtitle"><Link to="/subcategory/health" onClick={(event) => handleGetLinkText(event)}>Health</Link></li>
-                            <li className="subtitle"><Link to="/subcategory/canada" onClick={(event) => handleGetLinkText(event)}>Canada</Link></li>
-                            <li className="subtitle"><Link to="/subcategory/obituaries" onClick={(event) => handleGetLinkText(event)}>Obituaries</Link></li>
+                            <li className="subtitle"><Link to="/subcategory/world" onClick={(event) => setLinkText(event.target.textContent)}>World</Link></li>
+                            <li className="subtitle"><Link to="/subcategory/europe" onClick={(event) => setLinkText(event.target.textContent)}>Europe</Link></li>
+                            <li className="subtitle"><Link to="/subcategory/africa" onClick={(event) => setLinkText(event.target.textContent)}>Africa</Link></li>
+                            <li className="subtitle"><Link to="/subcategory/middleeast" onClick={(event) => setLinkText(event.target.textContent)}>Middle East</Link></li>
+                            <li className="subtitle"><Link to="/subcategory/americas" onClick={(event) => setLinkText(event.target.textContent)}>Americas</Link></li>
+                            <li className="subtitle"><Link to="/subcategory/science" onClick={(event) => setLinkText(event.target.textContent)}>Science</Link></li>
+                            <li className="subtitle"><Link to="/subcategory/asia" onClick={(event) => setLinkText(event.target.textContent)}>Asia</Link></li>
+                            <li className="subtitle"><Link to="/subcategory/climate" onClick={(event) => setLinkText(event.target.textContent)}>Climate</Link></li>
+                            <li className="subtitle"><Link to="/subcategory/australia" onClick={(event) => setLinkText(event.target.textContent)}>Australia</Link></li>
+                            <li className="subtitle"><Link to="/subcategory/health" onClick={(event) => setLinkText(event.target.textContent)}>Health</Link></li>
+                            <li className="subtitle"><Link to="/subcategory/canada" onClick={(event) => setLinkText(event.target.textContent)}>Canada</Link></li>
+                            <li className="subtitle"><Link to="/subcategory/obituaries" onClick={(event) => setLinkText(event.target.textContent)}>Obituaries</Link></li>
                         </div>
 
                         <div className="wrap-subtitle-content">
                             <h4 className="section-subtitle-title">TOP STORIES</h4>
-                            <li className="subtitle"><Link to="/subcategory/israelhamaswar" onClick={(event) => handleGetLinkText(event)}>Israel-Hamas War</Link></li>
-                            <li className="subtitle"><Link to="/subcategory/russiaukrainewar" onClick={(event) => handleGetLinkText(event)}>Russia-Ukraine War</Link></li>
+                            <li className="subtitle"><Link to="/subcategory/israelhamaswar" onClick={(event) => setLinkText(event.target.textContent)}>Israel-Hamas War</Link></li>
+                            <li className="subtitle"><Link to="/subcategory/russiaukrainewar" onClick={(event) => setLinkText(event.target.textContent)}>Russia-Ukraine War</Link></li>
                         </div>
 
                         <div className="wrap-section-subtitle-newsletters">
@@ -124,21 +124,21 @@ export const Menu = ({ handleGetLinkText }) => {
                     <ul className={openSectionId === "Business" ? "subcategories" : "displayNone"}>
                         <div className="wrap-subtitle-content">
                             <h4 className="section-subtitle-title">SECTIONS</h4>
-                            <li className="subtitle"><Link to="/subcategory/business" onClick={(event) => handleGetLinkText(event)}>Business</Link></li>
-                            <li className="subtitle"><Link to="/subcategory/tech" onClick={(event) => handleGetLinkText(event)}>Tech</Link></li>
-                            <li className="subtitle"><Link to="/subcategory/economy" onClick={(event) => handleGetLinkText(event)}>Economy</Link></li>
-                            <li className="subtitle"><Link to="/subcategory/media" onClick={(event) => handleGetLinkText(event)}>Media</Link></li>
-                            <li className="subtitle"><Link to="/subcategory/financeandmarkets" onClick={(event) => handleGetLinkText(event)}>Finance and Markets</Link></li>
-                            <li className="subtitle"><Link to="/subcategory/dealbook" onClick={(event) => handleGetLinkText(event)}>DealBook</Link></li>
-                            <li className="subtitle"><Link to="/subcategory/personaltech" onClick={(event) => handleGetLinkText(event)}>Personal Tech</Link></li>
-                            <li className="subtitle"><Link to="/subcategory/energytransition" onClick={(event) => handleGetLinkText(event)}>Energy Transition</Link></li>
-                            <li className="subtitle"><Link to="/subcategory/yourmoney" onClick={(event) => handleGetLinkText(event)}>Your Money</Link></li>
+                            <li className="subtitle"><Link to="/subcategory/business" onClick={(event) => setLinkText(event.target.textContent)}>Business</Link></li>
+                            <li className="subtitle"><Link to="/subcategory/tech" onClick={(event) => setLinkText(event.target.textContent)}>Tech</Link></li>
+                            <li className="subtitle"><Link to="/subcategory/economy" onClick={(event) => setLinkText(event.target.textContent)}>Economy</Link></li>
+                            <li className="subtitle"><Link to="/subcategory/media" onClick={(event) => setLinkText(event.target.textContent)}>Media</Link></li>
+                            <li className="subtitle"><Link to="/subcategory/financeandmarkets" onClick={(event) => setLinkText(event.target.textContent)}>Finance and Markets</Link></li>
+                            <li className="subtitle"><Link to="/subcategory/dealbook" onClick={(event) => setLinkText(event.target.textContent)}>DealBook</Link></li>
+                            <li className="subtitle"><Link to="/subcategory/personaltech" onClick={(event) => setLinkText(event.target.textContent)}>Personal Tech</Link></li>
+                            <li className="subtitle"><Link to="/subcategory/energytransition" onClick={(event) => setLinkText(event.target.textContent)}>Energy Transition</Link></li>
+                            <li className="subtitle"><Link to="/subcategory/yourmoney" onClick={(event) => setLinkText(event.target.textContent)}>Your Money</Link></li>
                         </div>
                         <div className="wrap-subtitle-content">
                             <h4 className="section-subtitle-title">TOP STORIES</h4>
-                            <li className="subtitle"><Link to="/subcategory/useconomy" onClick={(event) => handleGetLinkText(event)}>U.S. Economy</Link></li>
-                            <li className="subtitle"><Link to="/subcategory/stockmarket" onClick={(event) => handleGetLinkText(event)}>Stock Market</Link></li>
-                            <li className="subtitle"><Link to="/subcategory/artificalintelligence" onClick={(event) => handleGetLinkText(event)}>Artificial Intelligence</Link></li>
+                            <li className="subtitle"><Link to="/subcategory/useconomy" onClick={(event) => setLinkText(event.target.textContent)}>U.S. Economy</Link></li>
+                            <li className="subtitle"><Link to="/subcategory/stockmarket" onClick={(event) => setLinkText(event.target.textContent)}>Stock Market</Link></li>
+                            <li className="subtitle"><Link to="/subcategory/artificalintelligence" onClick={(event) => setLinkText(event.target.textContent)}>Artificial Intelligence</Link></li>
                         </div>
                         <div className="wrap-section-subtitle-newsletters">
                             <h4 className="section-subtitle-title">NEWSLETTERS</h4>
@@ -156,27 +156,27 @@ export const Menu = ({ handleGetLinkText }) => {
                     <ul className={openSectionId === "Arts" ? "subcategories" : "displayNone"}>
                         <div className="wrap-subtitle-content">
                             <h4 className="section-subtitle-title">SECTIONS</h4>
-                            <li className="subtitle"><Link to="/subcategory/todaysarts" onClick={(event) => handleGetLinkText(event)}>Today's Arts</Link></li>
-                            <li className="subtitle"><Link to="/subcategory/books" onClick={(event) => handleGetLinkText(event)}>Books</Link></li>
-                            <li className="subtitle"><Link to="/subcategory/bestsellers" onClick={(event) => handleGetLinkText(event)}>Best Sellers</Link></li>
-                            <li className="subtitle"><Link to="/subcategory/dance" onClick={(event) => handleGetLinkText(event)}>Dance</Link></li>
-                            <li className="subtitle"><Link to="/subcategory/movies" onClick={(event) => handleGetLinkText(event)}>Movies</Link></li>
-                            <li className="subtitle"><Link to="/subcategory/music" onClick={(event) => handleGetLinkText(event)}>Music</Link></li>
-                            <li className="subtitle"><Link to="/subcategory/television" onClick={(event) => handleGetLinkText(event)}>Television</Link></li>
-                            <li className="subtitle"><Link to="/subcategory/theater" onClick={(event) => handleGetLinkText(event)}>Theater</Link></li>
-                            <li className="subtitle"><Link to="/subcategory/popculture" onClick={(event) => handleGetLinkText(event)}>Pop Culture</Link></li>
-                            <li className="subtitle"><Link to="/subcategory/tmagazine" onClick={(event) => handleGetLinkText(event)}>T Magazine</Link></li>
-                            <li className="subtitle"><Link to="/subcategory/visualarts" onClick={(event) => handleGetLinkText(event)}>Visual Arts</Link></li>
+                            <li className="subtitle"><Link to="/subcategory/todaysarts" onClick={(event) => setLinkText(event.target.textContent)}>Today's Arts</Link></li>
+                            <li className="subtitle"><Link to="/subcategory/books" onClick={(event) => setLinkText(event.target.textContent)}>Books</Link></li>
+                            <li className="subtitle"><Link to="/subcategory/bestsellers" onClick={(event) => setLinkText(event.target.textContent)}>Best Sellers</Link></li>
+                            <li className="subtitle"><Link to="/subcategory/dance" onClick={(event) => setLinkText(event.target.textContent)}>Dance</Link></li>
+                            <li className="subtitle"><Link to="/subcategory/movies" onClick={(event) => setLinkText(event.target.textContent)}>Movies</Link></li>
+                            <li className="subtitle"><Link to="/subcategory/music" onClick={(event) => setLinkText(event.target.textContent)}>Music</Link></li>
+                            <li className="subtitle"><Link to="/subcategory/television" onClick={(event) => setLinkText(event.target.textContent)}>Television</Link></li>
+                            <li className="subtitle"><Link to="/subcategory/theater" onClick={(event) => setLinkText(event.target.textContent)}>Theater</Link></li>
+                            <li className="subtitle"><Link to="/subcategory/popculture" onClick={(event) => setLinkText(event.target.textContent)}>Pop Culture</Link></li>
+                            <li className="subtitle"><Link to="/subcategory/tmagazine" onClick={(event) => setLinkText(event.target.textContent)}>T Magazine</Link></li>
+                            <li className="subtitle"><Link to="/subcategory/visualarts" onClick={(event) => setLinkText(event.target.textContent)}>Visual Arts</Link></li>
                         </div>
                         <div className="wrap-subtitle-content">
                             <h4 className="section-subtitle-title">RECCOMMENDATIONS</h4>
-                            <li className="subtitle"><Link to="/subcategory/bestof2023" onClick={(event) => handleGetLinkText(event)}>Best of 2023</Link></li>
-                            <li className="subtitle"><Link to="/subcategory/awardseason" onClick={(event) => handleGetLinkText(event)}>Award Season</Link></li>
-                            <li className="subtitle"><Link to="/subcategory/criticspicks" onClick={(event) => handleGetLinkText(event)}>Critic's Picks</Link></li>
-                            <li className="subtitle"><Link to="/subcategory/whattoread" onClick={(event) => handleGetLinkText(event)}>What to Read</Link></li>
-                            <li className="subtitle"><Link to="/subcategory/whattowatch" onClick={(event) => handleGetLinkText(event)}>What to Watch</Link></li>
-                            <li className="subtitle"><Link to="/subcategory/whattolistento" onClick={(event) => handleGetLinkText(event)}>What to Listen To</Link></li>
-                            <li className="subtitle"><Link to="/subcategory/5minutestomakeyourlovemusic" onClick={(event) => handleGetLinkText(event)}>5 Minutes to Make You Love Music</Link></li>
+                            <li className="subtitle"><Link to="/subcategory/bestof2023" onClick={(event) => setLinkText(event.target.textContent)}>Best of 2023</Link></li>
+                            <li className="subtitle"><Link to="/subcategory/awardseason" onClick={(event) => setLinkText(event.target.textContent)}>Award Season</Link></li>
+                            <li className="subtitle"><Link to="/subcategory/criticspicks" onClick={(event) => setLinkText(event.target.textContent)}>Critic's Picks</Link></li>
+                            <li className="subtitle"><Link to="/subcategory/whattoread" onClick={(event) => setLinkText(event.target.textContent)}>What to Read</Link></li>
+                            <li className="subtitle"><Link to="/subcategory/whattowatch" onClick={(event) => setLinkText(event.target.textContent)}>What to Watch</Link></li>
+                            <li className="subtitle"><Link to="/subcategory/whattolistento" onClick={(event) => setLinkText(event.target.textContent)}>What to Listen To</Link></li>
+                            <li className="subtitle"><Link to="/subcategory/5minutestomakeyourlovemusic" onClick={(event) => setLinkText(event.target.textContent)}>5 Minutes to Make You Love Music</Link></li>
                         </div>
 
                         <div className="wrap-section-subtitle-newsletters">
@@ -200,33 +200,33 @@ export const Menu = ({ handleGetLinkText }) => {
                     <ul className={openSectionId === "Lifestyle" ? "subcategories" : "displayNone"}>
                         <div className="wrap-subtitle-content">
                             <h4 className="section-subtitle-title">SECTIONS</h4>
-                            <li className="subtitle"><Link to="/subcategory/alllifestyle" onClick={(event) => handleGetLinkText(event)}>All Life style</Link></li>
-                            <li className="subtitle"><Link to="/subcategory/well" onClick={(event) => handleGetLinkText(event)}>Well</Link></li>
-                            <li className="subtitle"><Link to="/subcategory/travel" onClick={(event) => handleGetLinkText(event)}>Travel</Link></li>
-                            <li className="subtitle"><Link to="/subcategory/style" onClick={(event) => handleGetLinkText(event)}>Style</Link></li>
-                            <li className="subtitle"><Link to="/subcategory/realestate" onClick={(event) => handleGetLinkText(event)}>Real Estate</Link></li>
-                            <li className="subtitle"><Link to="/subcategory/food" onClick={(event) => handleGetLinkText(event)}>Food</Link></li>
-                            <li className="subtitle"><Link to="/subcategory/fashion" onClick={(event) => handleGetLinkText(event)}>Fashion</Link></li>
-                            <li className="subtitle"><Link to="/subcategory/love" onClick={(event) => handleGetLinkText(event)}>Love</Link></li>
-                            <li className="subtitle"><Link to="/subcategory/yourmoney" onClick={(event) => handleGetLinkText(event)}>Your Money</Link></li>
-                            <li className="subtitle"><Link to="/subcategorytmagazine" onClick={(event) => handleGetLinkText(event)}>T Magazine</Link></li>
-                            <li className="subtitle"><Link to="/subcategory/visualarts" onClick={(event) => handleGetLinkText(event)}>Visual Arts</Link></li>
+                            <li className="subtitle"><Link to="/subcategory/alllifestyle" onClick={(event) => setLinkText(event.target.textContent)}>All Life style</Link></li>
+                            <li className="subtitle"><Link to="/subcategory/well" onClick={(event) => setLinkText(event.target.textContent)}>Well</Link></li>
+                            <li className="subtitle"><Link to="/subcategory/travel" onClick={(event) => setLinkText(event.target.textContent)}>Travel</Link></li>
+                            <li className="subtitle"><Link to="/subcategory/style" onClick={(event) => setLinkText(event.target.textContent)}>Style</Link></li>
+                            <li className="subtitle"><Link to="/subcategory/realestate" onClick={(event) => setLinkText(event.target.textContent)}>Real Estate</Link></li>
+                            <li className="subtitle"><Link to="/subcategory/food" onClick={(event) => setLinkText(event.target.textContent)}>Food</Link></li>
+                            <li className="subtitle"><Link to="/subcategory/fashion" onClick={(event) => setLinkText(event.target.textContent)}>Fashion</Link></li>
+                            <li className="subtitle"><Link to="/subcategory/love" onClick={(event) => setLinkText(event.target.textContent)}>Love</Link></li>
+                            <li className="subtitle"><Link to="/subcategory/yourmoney" onClick={(event) => setLinkText(event.target.textContent)}>Your Money</Link></li>
+                            <li className="subtitle"><Link to="/subcategorytmagazine" onClick={(event) => setLinkText(event.target.textContent)}>T Magazine</Link></li>
+                            <li className="subtitle"><Link to="/subcategory/visualarts" onClick={(event) => setLinkText(event.target.textContent)}>Visual Arts</Link></li>
                         </div>
                         <div className="wrap-subtitle-content">
                             <h4 className="section-subtitle-title">COLUMNS</h4>
-                            <li className="subtitle"><Link to="/subcategory/modernlove" onClick={(event) => handleGetLinkText(event)}>Modern Love</Link></li>
-                            <li className="subtitle"><Link to="/subcategory/thehunt" onClick={(event) => handleGetLinkText(event)}>The Hunt</Link></li>
-                            <li className="subtitle"><Link to="/subcategory/socialqs" onClick={(event) => handleGetLinkText(event)}>Social Q's</Link></li>
-                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => handleGetLinkText(event)}>The Ethicist</Link></li>
+                            <li className="subtitle"><Link to="/subcategory/modernlove" onClick={(event) => setLinkText(event.target.textContent)}>Modern Love</Link></li>
+                            <li className="subtitle"><Link to="/subcategory/thehunt" onClick={(event) => setLinkText(event.target.textContent)}>The Hunt</Link></li>
+                            <li className="subtitle"><Link to="/subcategory/socialqs" onClick={(event) => setLinkText(event.target.textContent)}>Social Q's</Link></li>
+                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => setLinkText(event.target.textContent)}>The Ethicist</Link></li>
                         </div>
                         <div className="wrap-subtitle-content">
                             <h4 className="section-subtitle-title">WELL</h4>
-                            <li className="subtitle"><Link to="/subcategory/eat" onClick={(event) => handleGetLinkText(event)}>Eat</Link></li>
-                            <li className="subtitle"><Link to="/subcategory/move" onClick={(event) => handleGetLinkText(event)}>Move</Link></li>
-                            <li className="subtitle"><Link to="/subcategory/mind" onClick={(event) => handleGetLinkText(event)}>Mind</Link></li>
-                            <li className="subtitle"><Link to="/subcategory/family" onClick={(event) => handleGetLinkText(event)}>Family</Link></li>
-                            <li className="subtitle"><Link to="/subcategory/live" onClick={(event) => handleGetLinkText(event)}>Live</Link></li>
-                            <li className="subtitle"><Link to="/subcategory/askwell" onClick={(event) => handleGetLinkText(event)}>Ask Well</Link></li>
+                            <li className="subtitle"><Link to="/subcategory/eat" onClick={(event) => setLinkText(event.target.textContent)}>Eat</Link></li>
+                            <li className="subtitle"><Link to="/subcategory/move" onClick={(event) => setLinkText(event.target.textContent)}>Move</Link></li>
+                            <li className="subtitle"><Link to="/subcategory/mind" onClick={(event) => setLinkText(event.target.textContent)}>Mind</Link></li>
+                            <li className="subtitle"><Link to="/subcategory/family" onClick={(event) => setLinkText(event.target.textContent)}>Family</Link></li>
+                            <li className="subtitle"><Link to="/subcategory/live" onClick={(event) => setLinkText(event.target.textContent)}>Live</Link></li>
+                            <li className="subtitle"><Link to="/subcategory/askwell" onClick={(event) => setLinkText(event.target.textContent)}>Ask Well</Link></li>
                         </div>
                         <div className="wrap-section-subtitle-newsletters">
                             <h4 className="section-subtitle-title">NEWSLETTERS</h4>
@@ -249,43 +249,43 @@ export const Menu = ({ handleGetLinkText }) => {
                     <ul className={openSectionId === "Opinion" ? "subcategories" : "displayNone"}>
                         <div className="wrap-subtitle-content">
                             <h4 className="section-subtitle-title">SECTIONS</h4>
-                            <li className="subtitle"><Link to="/subcategory/opinion" onClick={(event) => handleGetLinkText(event)}>Opinion</Link></li>
-                            <li className="subtitle"><Link to="/subcategory/guestessays" onClick={(event) => handleGetLinkText(event)}>Guest Essays</Link></li>
-                            <li className="subtitle"><Link to="/subcategory/editorials" onClick={(event) => handleGetLinkText(event)}>Editorials</Link></li>
-                            <li className="subtitle"><Link to="/subcategory/opdocs" onClick={(event) => handleGetLinkText(event)}>Op-Docs</Link></li>
-                            <li className="subtitle"><Link to="/subcategory/videos" onClick={(event) => handleGetLinkText(event)}>Videos</Link></li>
-                            <li className="subtitle"><Link to="/subcategory/letters" onClick={(event) => handleGetLinkText(event)}>Letters</Link></li>
+                            <li className="subtitle"><Link to="/subcategory/opinion" onClick={(event) => setLinkText(event.target.textContent)}>Opinion</Link></li>
+                            <li className="subtitle"><Link to="/subcategory/guestessays" onClick={(event) => setLinkText(event.target.textContent)}>Guest Essays</Link></li>
+                            <li className="subtitle"><Link to="/subcategory/editorials" onClick={(event) => setLinkText(event.target.textContent)}>Editorials</Link></li>
+                            <li className="subtitle"><Link to="/subcategory/opdocs" onClick={(event) => setLinkText(event.target.textContent)}>Op-Docs</Link></li>
+                            <li className="subtitle"><Link to="/subcategory/videos" onClick={(event) => setLinkText(event.target.textContent)}>Videos</Link></li>
+                            <li className="subtitle"><Link to="/subcategory/letters" onClick={(event) => setLinkText(event.target.textContent)}>Letters</Link></li>
                         </div>
                         <div className="wrap-subtitle-content">
                             <h4 className="section-subtitle-title">TOPICS</h4>
-                            <li className="subtitle"><Link to="/subcategory/politics" onClick={(event) => handleGetLinkText(event)}>Politics</Link></li>
-                            <li className="subtitle"><Link to="/subcategory/world" onClick={(event) => handleGetLinkText(event)}>World</Link></li>
-                            <li className="subtitle"><Link to="/subcategory/business" onClick={(event) => handleGetLinkText(event)}>Business</Link></li>
-                            <li className="subtitle"><Link to="/subcategory/tech" onClick={(event) => handleGetLinkText(event)}>Tech</Link></li>
-                            <li className="subtitle"><Link to="/subcategory/climate" onClick={(event) => handleGetLinkText(event)}>Climate</Link></li>
-                            <li className="subtitle"><Link to="/subcategory/health" onClick={(event) => handleGetLinkText(event)}>Health</Link></li>
-                            <li className="subtitle"><Link to="/subcategory/culture" onClick={(event) => handleGetLinkText(event)}>Culture</Link></li>
+                            <li className="subtitle"><Link to="/subcategory/politics" onClick={(event) => setLinkText(event.target.textContent)}>Politics</Link></li>
+                            <li className="subtitle"><Link to="/subcategory/world" onClick={(event) => setLinkText(event.target.textContent)}>World</Link></li>
+                            <li className="subtitle"><Link to="/subcategory/business" onClick={(event) => setLinkText(event.target.textContent)}>Business</Link></li>
+                            <li className="subtitle"><Link to="/subcategory/tech" onClick={(event) => setLinkText(event.target.textContent)}>Tech</Link></li>
+                            <li className="subtitle"><Link to="/subcategory/climate" onClick={(event) => setLinkText(event.target.textContent)}>Climate</Link></li>
+                            <li className="subtitle"><Link to="/subcategory/health" onClick={(event) => setLinkText(event.target.textContent)}>Health</Link></li>
+                            <li className="subtitle"><Link to="/subcategory/culture" onClick={(event) => setLinkText(event.target.textContent)}>Culture</Link></li>
                         </div>
                         <div className="wrap-subtitle-content">
                             <h4 className="section-subtitle-title">COLUMNIST</h4>
-                            <li className="subtitle"><Link to="/subcategory/charlesmblow" onClick={(event) => handleGetLinkText(event)}>Charles M. Blow</Link></li>
-                            <li className="subtitle"><Link to="/subcategory/ezraklein" onClick={(event) => handleGetLinkText(event)}>Ezra Klein</Link></li>
-                            <li className="subtitle"><Link to="/subcategory/jamellebouie" onClick={(event) => handleGetLinkText(event)}>Jamelle Bouie</Link></li>
-                            <li className="subtitle"><Link to="/subcategory/nicholaskristof" onClick={(event) => handleGetLinkText(event)}>Nicholas Kristof</Link></li>
-                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => handleGetLinkText(event)}>David Brooks</Link></li>
-                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => handleGetLinkText(event)}>Paul Krugman</Link></li>
-                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => handleGetLinkText(event)}>Gail Collins</Link></li>
-                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => handleGetLinkText(event)}>Carlos Lozada</Link></li>
-                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => handleGetLinkText(event)}>Ross Douthat</Link></li>
-                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => handleGetLinkText(event)}>Tressie McMillan Cottom</Link></li>
-                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => handleGetLinkText(event)}>Maureen Dowd</Link></li>
-                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => handleGetLinkText(event)}>Pamela Paul</Link></li>
-                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => handleGetLinkText(event)}>David French</Link></li>
-                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => handleGetLinkText(event)}>Lydia Polgreen</Link></li>
-                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => handleGetLinkText(event)}>Thomas L. Friedman</Link></li>
-                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => handleGetLinkText(event)}>Bret Stephens</Link></li>
-                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => handleGetLinkText(event)}>Michelle Goldberg</Link></li>
-                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => handleGetLinkText(event)}>Zeynep Tufekci</Link></li>
+                            <li className="subtitle"><Link to="/subcategory/charlesmblow" onClick={(event) => setLinkText(event.target.textContent)}>Charles M. Blow</Link></li>
+                            <li className="subtitle"><Link to="/subcategory/ezraklein" onClick={(event) => setLinkText(event.target.textContent)}>Ezra Klein</Link></li>
+                            <li className="subtitle"><Link to="/subcategory/jamellebouie" onClick={(event) => setLinkText(event.target.textContent)}>Jamelle Bouie</Link></li>
+                            <li className="subtitle"><Link to="/subcategory/nicholaskristof" onClick={(event) => setLinkText(event.target.textContent)}>Nicholas Kristof</Link></li>
+                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => setLinkText(event.target.textContent)}>David Brooks</Link></li>
+                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => setLinkText(event.target.textContent)}>Paul Krugman</Link></li>
+                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => setLinkText(event.target.textContent)}>Gail Collins</Link></li>
+                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => setLinkText(event.target.textContent)}>Carlos Lozada</Link></li>
+                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => setLinkText(event.target.textContent)}>Ross Douthat</Link></li>
+                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => setLinkText(event.target.textContent)}>Tressie McMillan Cottom</Link></li>
+                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => setLinkText(event.target.textContent)}>Maureen Dowd</Link></li>
+                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => setLinkText(event.target.textContent)}>Pamela Paul</Link></li>
+                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => setLinkText(event.target.textContent)}>David French</Link></li>
+                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => setLinkText(event.target.textContent)}>Lydia Polgreen</Link></li>
+                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => setLinkText(event.target.textContent)}>Thomas L. Friedman</Link></li>
+                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => setLinkText(event.target.textContent)}>Bret Stephens</Link></li>
+                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => setLinkText(event.target.textContent)}>Michelle Goldberg</Link></li>
+                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => setLinkText(event.target.textContent)}>Zeynep Tufekci</Link></li>
                         </div>
                     </ul>
                 </section>
@@ -297,18 +297,18 @@ export const Menu = ({ handleGetLinkText }) => {
                     <ul className={openSectionId === "Audio" ? "subcategories" : "displayNone"}>
                         <div className="wrap-subtitle-content">
                             <h4 className="section-subtitle-title">LISTEN</h4>
-                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => handleGetLinkText(event)}>The Headlines</Link></li>
-                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => handleGetLinkText(event)}>The Book Review Podcast</Link></li>
-                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => handleGetLinkText(event)}>The Daily</Link></li>
-                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => handleGetLinkText(event)}>Modern Love</Link></li>
-                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => handleGetLinkText(event)}>Hard Fork</Link></li>
-                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => handleGetLinkText(event)}>The Run-Up</Link></li>
-                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => handleGetLinkText(event)}>The Ezra Klein Show</Link></li>
-                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => handleGetLinkText(event)}>Popcast</Link></li>
-                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => handleGetLinkText(event)}>Matter of Opiniony</Link></li>
-                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => handleGetLinkText(event)}>Reporter Reads</Link></li>
-                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => handleGetLinkText(event)}>Serial Productions</Link></li>
-                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => handleGetLinkText(event)}>The Sunday Read</Link></li>
+                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => setLinkText(event.target.textContent)}>The Headlines</Link></li>
+                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => setLinkText(event.target.textContent)}>The Book Review Podcast</Link></li>
+                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => setLinkText(event.target.textContent)}>The Daily</Link></li>
+                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => setLinkText(event.target.textContent)}>Modern Love</Link></li>
+                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => setLinkText(event.target.textContent)}>Hard Fork</Link></li>
+                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => setLinkText(event.target.textContent)}>The Run-Up</Link></li>
+                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => setLinkText(event.target.textContent)}>The Ezra Klein Show</Link></li>
+                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => setLinkText(event.target.textContent)}>Popcast</Link></li>
+                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => setLinkText(event.target.textContent)}>Matter of Opiniony</Link></li>
+                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => setLinkText(event.target.textContent)}>Reporter Reads</Link></li>
+                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => setLinkText(event.target.textContent)}>Serial Productions</Link></li>
+                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => setLinkText(event.target.textContent)}>The Sunday Read</Link></li>
                         </div>
 
                         <div className="wrap-section-subtitle-newsletters">
@@ -327,25 +327,25 @@ export const Menu = ({ handleGetLinkText }) => {
                     <ul className={openSectionId === "Games" ? "subcategories" : "displayNone"}>
                         <div className="wrap-subtitle-content">
                             <h4 className="section-subtitle-title">PLAY</h4>
-                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => handleGetLinkText(event)}>Spelling Bee</Link></li>
-                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => handleGetLinkText(event)}>The Mini Crossword</Link></li>
-                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => handleGetLinkText(event)}>Wordle</Link></li>
-                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => handleGetLinkText(event)}>The Crossword</Link></li>
-                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => handleGetLinkText(event)}>Vertex</Link></li>
-                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => handleGetLinkText(event)}>Connections</Link></li>
-                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => handleGetLinkText(event)}>Sudoku</Link></li>
-                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => handleGetLinkText(event)}>Letter Boxed</Link></li>
-                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => handleGetLinkText(event)}>Tiles</Link></li>
+                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => setLinkText(event.target.textContent)}>Spelling Bee</Link></li>
+                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => setLinkText(event.target.textContent)}>The Mini Crossword</Link></li>
+                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => setLinkText(event.target.textContent)}>Wordle</Link></li>
+                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => setLinkText(event.target.textContent)}>The Crossword</Link></li>
+                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => setLinkText(event.target.textContent)}>Vertex</Link></li>
+                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => setLinkText(event.target.textContent)}>Connections</Link></li>
+                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => setLinkText(event.target.textContent)}>Sudoku</Link></li>
+                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => setLinkText(event.target.textContent)}>Letter Boxed</Link></li>
+                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => setLinkText(event.target.textContent)}>Tiles</Link></li>
                         </div>
                         <div className="wrap-subtitle-content">
                             <h4 className="section-subtitle-title">COMMUNITY</h4>
-                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => handleGetLinkText(event)}>Soelling Bee Forum</Link></li>
-                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => handleGetLinkText(event)}>Worldplay Column</Link></li>
-                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => handleGetLinkText(event)}>Wordle Review</Link></li>
-                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => handleGetLinkText(event)}>Submit a Crossword</Link></li>
-                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => handleGetLinkText(event)}>Meet Our Crossword Constructors</Link></li>
-                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => handleGetLinkText(event)}>Mini to Maestro</Link></li>
-                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => handleGetLinkText(event)}>Wordlebot</Link></li>
+                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => setLinkText(event.target.textContent)}>Soelling Bee Forum</Link></li>
+                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => setLinkText(event.target.textContent)}>Worldplay Column</Link></li>
+                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => setLinkText(event.target.textContent)}>Wordle Review</Link></li>
+                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => setLinkText(event.target.textContent)}>Submit a Crossword</Link></li>
+                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => setLinkText(event.target.textContent)}>Meet Our Crossword Constructors</Link></li>
+                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => setLinkText(event.target.textContent)}>Mini to Maestro</Link></li>
+                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => setLinkText(event.target.textContent)}>Wordlebot</Link></li>
                         </div>
                         <div className="wrap-section-subtitle-newsletters">
                             <h4 className="section-subtitle-title">NEWSLETTERS</h4>
@@ -363,26 +363,26 @@ export const Menu = ({ handleGetLinkText }) => {
                     <ul className={openSectionId === "Cooking" ? "subcategories" : "displayNone"}>
                         <div className="wrap-subtitle-content">
                             <h4 className="section-subtitle-title">RECIPES</h4>
-                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => handleGetLinkText(event)}>Easy</Link></li>
-                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => handleGetLinkText(event)}>Vegetarian</Link></li>
-                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => handleGetLinkText(event)}>Dinner</Link></li>
-                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => handleGetLinkText(event)}>Vegan</Link></li>
-                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => handleGetLinkText(event)}>Quick</Link></li>
-                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => handleGetLinkText(event)}>Chicken</Link></li>
-                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => handleGetLinkText(event)}>Healthy</Link></li>
-                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => handleGetLinkText(event)}>Pasta</Link></li>
-                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => handleGetLinkText(event)}>Breakfast</Link></li>
-                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => handleGetLinkText(event)}>Dessert</Link></li>
+                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => setLinkText(event.target.textContent)}>Easy</Link></li>
+                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => setLinkText(event.target.textContent)}>Vegetarian</Link></li>
+                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => setLinkText(event.target.textContent)}>Dinner</Link></li>
+                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => setLinkText(event.target.textContent)}>Vegan</Link></li>
+                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => setLinkText(event.target.textContent)}>Quick</Link></li>
+                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => setLinkText(event.target.textContent)}>Chicken</Link></li>
+                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => setLinkText(event.target.textContent)}>Healthy</Link></li>
+                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => setLinkText(event.target.textContent)}>Pasta</Link></li>
+                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => setLinkText(event.target.textContent)}>Breakfast</Link></li>
+                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => setLinkText(event.target.textContent)}>Dessert</Link></li>
                         </div>
                         <div className="wrap-subtitle-content">
                             <h4 className="section-subtitle-title">EDITORS' PICKS</h4>
-                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => handleGetLinkText(event)}>Soups and Stews</Link></li>
-                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => handleGetLinkText(event)}>Easy Weeknight</Link></li>
-                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => handleGetLinkText(event)}>Newest Recipes</Link></li>
-                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => handleGetLinkText(event)}>One-Pot Meals</Link></li>
-                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => handleGetLinkText(event)}>Slow Cooker Recipes</Link></li>
-                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => handleGetLinkText(event)}>Comfort Food</Link></li>
-                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => handleGetLinkText(event)}>Party Recipes</Link></li>
+                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => setLinkText(event.target.textContent)}>Soups and Stews</Link></li>
+                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => setLinkText(event.target.textContent)}>Easy Weeknight</Link></li>
+                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => setLinkText(event.target.textContent)}>Newest Recipes</Link></li>
+                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => setLinkText(event.target.textContent)}>One-Pot Meals</Link></li>
+                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => setLinkText(event.target.textContent)}>Slow Cooker Recipes</Link></li>
+                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => setLinkText(event.target.textContent)}>Comfort Food</Link></li>
+                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => setLinkText(event.target.textContent)}>Party Recipes</Link></li>
                         </div>
                         <div className="wrap-section-subtitle-newsletters">
                             <h4 className="section-subtitle-title">NEWSLETTERS</h4>
@@ -410,26 +410,26 @@ export const Menu = ({ handleGetLinkText }) => {
                     <ul className={openSectionId === "Wirecutter" ? "subcategories" : "displayNone"}>
                         <div className="wrap-subtitle-content">
                             <h4 className="section-subtitle-title">REVIEWS</h4>
-                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => handleGetLinkText(event)}>Kitchen</Link></li>
-                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => handleGetLinkText(event)}>Tech</Link></li>
-                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => handleGetLinkText(event)}>Sleep</Link></li>
-                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => handleGetLinkText(event)}>Appliances</Link></li>
-                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => handleGetLinkText(event)}>Home and Garden</Link></li>
-                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => handleGetLinkText(event)}>Moving</Link></li>
-                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => handleGetLinkText(event)}>Travel</Link></li>
-                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => handleGetLinkText(event)}>Gifts</Link></li>
-                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => handleGetLinkText(event)}>Deals</Link></li>
-                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => handleGetLinkText(event)}>Baby and Kid</Link></li>
-                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => handleGetLinkText(event)}>Health and Fitness</Link></li>
+                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => setLinkText(event.target.textContent)}>Kitchen</Link></li>
+                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => setLinkText(event.target.textContent)}>Tech</Link></li>
+                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => setLinkText(event.target.textContent)}>Sleep</Link></li>
+                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => setLinkText(event.target.textContent)}>Appliances</Link></li>
+                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => setLinkText(event.target.textContent)}>Home and Garden</Link></li>
+                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => setLinkText(event.target.textContent)}>Moving</Link></li>
+                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => setLinkText(event.target.textContent)}>Travel</Link></li>
+                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => setLinkText(event.target.textContent)}>Gifts</Link></li>
+                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => setLinkText(event.target.textContent)}>Deals</Link></li>
+                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => setLinkText(event.target.textContent)}>Baby and Kid</Link></li>
+                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => setLinkText(event.target.textContent)}>Health and Fitness</Link></li>
                         </div>
                         <div className="wrap-subtitle-content">
                             <h4 className="section-subtitle-title">THE BEST...</h4>
-                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => handleGetLinkText(event)}>Air Purifier</Link></li>
-                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => handleGetLinkText(event)}>Electric Toothbrush</Link></li>
-                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => handleGetLinkText(event)}>Pressure Washer</Link></li>
-                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => handleGetLinkText(event)}>Cordless Stick Vacuum</Link></li>
-                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => handleGetLinkText(event)}>Office Chair</Link></li>
-                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => handleGetLinkText(event)}>Robot Vacuum</Link></li>
+                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => setLinkText(event.target.textContent)}>Air Purifier</Link></li>
+                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => setLinkText(event.target.textContent)}>Electric Toothbrush</Link></li>
+                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => setLinkText(event.target.textContent)}>Pressure Washer</Link></li>
+                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => setLinkText(event.target.textContent)}>Cordless Stick Vacuum</Link></li>
+                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => setLinkText(event.target.textContent)}>Office Chair</Link></li>
+                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => setLinkText(event.target.textContent)}>Robot Vacuum</Link></li>
                         </div>
                         <div className="wrap-section-subtitle-newsletters">
                             <h4 className="section-subtitle-title">NEWSLETTERS</h4>
@@ -452,24 +452,24 @@ export const Menu = ({ handleGetLinkText }) => {
                     <ul className={openSectionId === "The Athletic" ? "subcategories" : "displayNone"}>
                         <div className="wrap-subtitle-content">
                             <h4 className="section-subtitle-title">LEAGUES</h4>
-                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => handleGetLinkText(event)}>NFL</Link></li>
-                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => handleGetLinkText(event)}>NHL</Link></li>
-                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => handleGetLinkText(event)}>NBA</Link></li>
-                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => handleGetLinkText(event)}>MLS</Link></li>
-                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => handleGetLinkText(event)}>Premier League</Link></li>
-                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => handleGetLinkText(event)}>Formula 1</Link></li>
-                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => handleGetLinkText(event)}>NCAAF</Link></li>
-                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => handleGetLinkText(event)}>NWSL</Link></li>
-                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => handleGetLinkText(event)}>NCAAM</Link></li>
-                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => handleGetLinkText(event)}>Golf</Link></li>
-                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => handleGetLinkText(event)}>Golf</Link></li>
+                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => setLinkText(event.target.textContent)}>NFL</Link></li>
+                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => setLinkText(event.target.textContent)}>NHL</Link></li>
+                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => setLinkText(event.target.textContent)}>NBA</Link></li>
+                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => setLinkText(event.target.textContent)}>MLS</Link></li>
+                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => setLinkText(event.target.textContent)}>Premier League</Link></li>
+                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => setLinkText(event.target.textContent)}>Formula 1</Link></li>
+                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => setLinkText(event.target.textContent)}>NCAAF</Link></li>
+                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => setLinkText(event.target.textContent)}>NWSL</Link></li>
+                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => setLinkText(event.target.textContent)}>NCAAM</Link></li>
+                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => setLinkText(event.target.textContent)}>Golf</Link></li>
+                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => setLinkText(event.target.textContent)}>Golf</Link></li>
                         </div>
                         <div className="wrap-subtitle-content">
                             <h4 className="section-subtitle-title">TOP STORIES</h4>
-                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => handleGetLinkText(event)}>Must-Read Stories</Link></li>
-                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => handleGetLinkText(event)}>Today's News</Link></li>
-                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => handleGetLinkText(event)}>2024 NFL Draft</Link></li>
-                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => handleGetLinkText(event)}>MLB Free Agency</Link></li>
+                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => setLinkText(event.target.textContent)}>Must-Read Stories</Link></li>
+                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => setLinkText(event.target.textContent)}>Today's News</Link></li>
+                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => setLinkText(event.target.textContent)}>2024 NFL Draft</Link></li>
+                            <li className="subtitle"><Link to="/subcategory" onClick={(event) => setLinkText(event.target.textContent)}>MLB Free Agency</Link></li>
                         </div>
                         <div className="wrap-section-subtitle-newsletters">
                             <h4 className="section-subtitle-title">NEWSLETTERS</h4>
