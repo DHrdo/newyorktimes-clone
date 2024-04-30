@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Helmet } from 'react-helmet';
 import { APICall } from '../MainPage/MainPage'
 import { Loading } from './../Loading/Loading';
 
@@ -27,6 +28,10 @@ export const SearchPage = ({ isMenuOpened, userInputText, setLoading, loading })
 
     return (
         <main className={!isMenuOpened ? "search-main" : "displayNone"}>
+            <Helmet>
+                <title>N.Y.T. - {userInputText}</title>
+            </Helmet>
+
             {
                 loading ?
                     <Loading /> :

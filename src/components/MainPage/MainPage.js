@@ -8,6 +8,8 @@ if (process.env.NODE_ENV !== 'production') {
 };
 */
 
+
+/* FUNZIONI USATE IN MAINPAGE.JS, SUBCATEGORY.JS, SEARCH.JS */
 export function saveNewsData(responseData, setArray) {
     const newsObj = responseData.map(item => (
         {
@@ -43,7 +45,7 @@ export function APICall(url, saveToState, setLoading) {
             setLoading(false);
         })
 };
-
+/* --------------------------------------------------------- */
 
 export const MainPage = ({ isMenuOpened, screenSize, loading, setLoading }) => {
 
@@ -379,12 +381,11 @@ export const MainPage = ({ isMenuOpened, screenSize, loading, setLoading }) => {
 
 
     const API_KEY = process.env.REACT_APP_API_KEY;
-    //'cIi5dphyFv4WN0ZEh6bYsH6xqpMTVPDb'
 
     useEffect(() => {
         APICall(`https://api.nytimes.com/svc/topstories/v2/home.json?api-key=${API_KEY}`, setNews, setLoading);
-        //APICall(`https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${getRandomCountries()}&api-key=${API_KEY}`, setOtherNews, setLoading);
-        //APICall(`https://api.nytimes.com/svc/search/v2/articlesearch.json?fq=news_desk:(${getNewsDeskItem()})&api-key=${API_KEY}`, setRandomNews, setLoading);
+        APICall(`https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${getRandomCountries()}&api-key=${API_KEY}`, setOtherNews, setLoading);
+        APICall(`https://api.nytimes.com/svc/search/v2/articlesearch.json?fq=news_desk:(${getNewsDeskItem()})&api-key=${API_KEY}`, setRandomNews, setLoading);
     }, []);
 
 

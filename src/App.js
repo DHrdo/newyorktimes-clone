@@ -18,7 +18,6 @@ const App = () => {
   const [isMenuOpened, setIsMenuOpened] = useState(false);
   const [subName, setSubName] = useState('');
   const [linkText, setLinkText] = useState('');
-  console.log('linkText, app', linkText)
   const [userInputText, setUserInputText] = useState('');
   const [loading, setLoading] = useState(true);
 
@@ -86,6 +85,7 @@ const App = () => {
       <Routes>
         <Route
           path='/'
+
           element={
             <MainPage
               screenSize={windowWidth}
@@ -98,6 +98,7 @@ const App = () => {
 
         <Route
           path={`/subcategory/${subName}`}
+
           element={
             <Subcategory
               screenSize={windowWidth}
@@ -113,6 +114,7 @@ const App = () => {
 
         <Route
           path={`/search/${subName}`}
+
           element={
             <SearchPage
               screenSize={windowWidth}

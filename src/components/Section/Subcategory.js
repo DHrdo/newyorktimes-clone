@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Helmet } from 'react-helmet';
 import { APICall } from '../MainPage/MainPage'
 import { Loading } from './../Loading/Loading';
 
@@ -11,8 +12,6 @@ export const Subcategory = (
         loading
     }
 ) => {
-    console.log('linkText', linkText)
-
 
     const [subCategoryNews, setSubCategoryNews] = useState([])
 
@@ -37,6 +36,10 @@ export const Subcategory = (
 
     return (
         <main className={!isMenuOpened ? "subcategory-main" : "displayNone"}>
+            <Helmet>
+                <title>N.Y.T. - {linkText}</title>
+            </Helmet>
+
             {
                 loading ?
                     <Loading /> :
